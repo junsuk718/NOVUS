@@ -1,0 +1,14 @@
+2021-03-26 11:07:50,655 [INFO] Activator:170 - 
+
+
+2021-03-26 11:07:50,656 [INFO] Activator:171 - !SESSION log4j initialized
+2021-03-26 11:08:29,423 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {}->http://sw-center.st.com:80: The target server failed to respond
+2021-03-26 11:08:29,426 [INFO] RetryExec:113 - Retrying request to {}->http://sw-center.st.com:80
+2021-03-26 11:08:51,384 [INFO] RetryExec:97 - I/O exception (org.apache.http.NoHttpResponseException) caught when processing request to {s}->https://sw-center.st.com:443: The target server failed to respond
+2021-03-26 11:08:51,384 [INFO] RetryExec:113 - Retrying request to {s}->https://sw-center.st.com:443
+2021-03-26 11:10:27,183 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] toolchainItems.length=====1
+2021-03-26 11:12:12,588 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-03-26 12:08:08,460 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-03-26 12:08:08,724 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-03-26 12:08:08,725 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
+2021-03-26 12:08:08,727 [INFO] LogOutputStream:76 - [STDOUT_REDIRECT] Command line
