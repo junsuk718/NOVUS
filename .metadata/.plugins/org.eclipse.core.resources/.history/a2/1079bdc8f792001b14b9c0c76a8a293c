@@ -1,0 +1,21 @@
+/**
+ *
+ * @file : as5147.c
+ * @brief : header for as5147.cpp
+ *
+ * */
+
+#include <stdio.h>
+
+uint8_t errorFlag = 0;
+uint16_t _cs;
+uint16_t cs;
+GPIO_TypeDef* _ps;
+SPI_HandleTypeDef* _spi;
+uint8_t dout;
+uint8_t din;
+uint8_t clk;
+uint16_t position;
+uint16_t transaction(uint16_t data);
+
+

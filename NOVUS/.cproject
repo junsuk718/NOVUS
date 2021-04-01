@@ -139,6 +139,8 @@
                         					
                     </folderInfo>
                     					
+                    <fileInfo id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.996488963.214154659" name="as5147.h" rcbsApplicability="disable" resourcePath="Core/Inc/as5147.h" toolsToInvoke=""/>
+                    					
                     <sourceEntries>
                         						
                         <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
@@ -334,6 +336,32 @@
             <autodiscovery enabled="false" problemReportingEnabled="true" selectedProfileId=""/>
             		
         </scannerConfigBuildInfo>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="refreshScope" versionNumber="2">
+        		
+        <configuration configurationName="Debug">
+            			
+            <resource resourceType="PROJECT" workspacePath="/NOVUS"/>
+            		
+        </configuration>
+        		
+        <configuration configurationName="Release">
+            			
+            <resource resourceType="PROJECT" workspacePath="/NOVUS"/>
+            		
+        </configuration>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="org.eclipse.cdt.core.language.mapping">
+        		
+        <project-mappings>
+            			
+            <file-mapping configuration="" language="org.eclipse.cdt.core.g++" path="Core/Inc/as5147.h"/>
+            		
+        </project-mappings>
         	
     </storageModule>
     
