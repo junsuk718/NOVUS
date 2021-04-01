@@ -1,0 +1,25 @@
+/*
+ * spi.h
+ *
+ *  Created on: 2021. 3. 31.
+ *      Author: sb030
+ */
+
+#ifndef INC_SPI_H_
+#define INC_SPI_H_
+
+#include "stm32g4xx_hal_spi.h"
+#include "stm32g4xx_hal_gpio.h"
+
+#define SPI1_CS_Pin GPIO_PIN_4
+#define SPI1_CS_GPIO_Port GPIOA
+
+
+
+
+
+
+void SpiCall(void);
+
+
+#endif /* INC_SPI_H_ */
