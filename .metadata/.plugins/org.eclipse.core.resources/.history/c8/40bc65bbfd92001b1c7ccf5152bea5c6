@@ -25,9 +25,9 @@ class AS5147{
 	uint16_t position;
 	uint16_t transaction(uint16_t data);
 
-//	uint8_t dout;
-//	uint8_t din;
-//	uint8_t clk;
+	uint8_t dout;
+	uint8_t din;
+	uint8_t clk;
 	//	uint16_t _cs;
 	//	uint16_t cs;
 	//	GPIO_TypeDef* _ps;
