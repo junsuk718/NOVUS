@@ -65,6 +65,11 @@ uint16_t AS5147::getState(){
 	 */
 }
 
+uint8_t AS5147::agcGain(){
+	uint16_t data = AS5147::getState();
+	return (uint8_t) data & 0xFF;
+}
+
 
 /*
  * check error register
@@ -93,5 +98,11 @@ uint16_t AS5147::angleMap(uint16_t angle){
 	return angle * (360 / 16383);
 }
 
+
+uint16_t AS5147::systime(){
+	/*
+	 * return time
+	 */
+}
 
 

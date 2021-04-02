@@ -91,6 +91,7 @@ public:
 	uint16_t angleMap();
 
 
+	uint16_t systime();
 
 };
 
