@@ -17,6 +17,9 @@
 //!NOTE :: I_gain은 현재 사용하지 않음. 사용시 주석 해제. @mhlee (2021.03.30)
 //#define I_CONTROLLER
 
+/*
+ *
+*/
 struct Speed_controller_gain{
     float P_gain;
     float D_gain;
@@ -43,17 +46,25 @@ struct Set_Point_Value{
 };
 
 float AMP_GAIN;
-struct Speed_controller_gain STP_GAIN;
+struct Speed_controller_gain SPD_GAIN;
 struct Moment_controller_gain MNT_GAIN;
+struct Set_Point_Value SPT_VALUE;
 
+#ifdef I_CONTROLLER
 void setSpeedGain(float p, float d, float i);
 void setMomentGain(float p, float d, float i);
+#else
+void setSpeedGain(float p, float d);
+void setMomentGain(float p, float d);
+#endif
 void setAmplitudeGain(float gain);
 
-SPT_Value setpoint(RC rc, MOTOR motor);
+struct Set_Point_Value setpoint(RC rc, MOTOR motor);
 
 float setSpeed(uint16_t throttle);
 float setAmplitude(uint16_t stick_pos, float current_speed, MOTOR motor);
 float setCyclicShift(uint16_t roll_stick_pos, uint16_t pitch_stick_pos);
+
+float stick2percent(uint16_t stick);
 
 #endif
