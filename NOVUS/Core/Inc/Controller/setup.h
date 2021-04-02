@@ -14,6 +14,8 @@
 #ifndef __SETUP_H
 #define __SETUP_H
 
+#include "novus_math.h"
+
 //!NOTE :: I_gain은 현재 사용하지 않음. 사용시 주석 해제. @mhlee (2021.03.30)
 //#define I_CONTROLLER
 
@@ -36,19 +38,18 @@ struct Moment_controller_gain{
     #endif
 };
 
-struct Set_Point_Value{
+typedef struct Set_Point_Value{
     float speed;
 
     float pitch_amplitude;
     float roll_amplitude;
 
     float cyclic_shift;
-};
+}SPT_Value;
 
 float AMP_GAIN;
 struct Speed_controller_gain SPD_GAIN;
 struct Moment_controller_gain MNT_GAIN;
-struct Set_Point_Value SPT_VALUE;
 
 #ifdef I_CONTROLLER
 void setSpeedGain(float p, float d, float i);
