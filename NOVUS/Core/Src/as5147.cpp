@@ -11,9 +11,19 @@
 
 //constructor
 //spiConnection , GPIO pin set
-AS5147::AS5147(){
-
+AS5147::AS5147(SPI_HangleTypeDef* hspi, GPIO_TypeDef* arg_ps, uint16_t arg_cs){
+	_cs = arg_cs;
+	_ps = arg_ps;
+	_spi = hspi;
+	errorFlag = 0;
+	position = 0;
 }
+
+/*
+ *
+ * GPIO write pin
+ * write yet
+ */
 
 
 
@@ -62,6 +72,10 @@ uint16_t AS5147::getState(){
 }
 
 
+uint8_t error(){
+	return errorFlag;
+}
+
 /*
  * check error register
  */
@@ -78,6 +92,21 @@ void AS5147::setZeroPosition(uint16_t zero_position){
 
 uint16_t getZeroPosition(){
 	return position;
+}
+
+uint16_t normalize_angle(uint16_t angle){
+
+	#ifdef ANGLE_MODE_1
+			angle += 100;
+	#endif
+	angle = fmod(angle, 360);
+	if(angle < 0){
+		angle += 360;
+	}
+	#ifdef ANGLE_MODE_1
+			angle -=180;
+	#endif
+	return angle;
 }
 
 

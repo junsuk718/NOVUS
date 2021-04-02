@@ -21,7 +21,7 @@ extern "C" {
 class AS5147{
 	uint8_t errorFlag = 0;
 	uint16_t _cs;
-	uint16_t cs;
+	//uint16_t cs;
 	GPIO_TypeDef* _ps;
 	SPI_HandleTypeDef* _spi;
 	uint8_t dout;
@@ -70,6 +70,8 @@ public:
 	uint16_t getState();
 
 
+	uint8_t error();
+
 	// check error
 	uint8_t checkerror();
 
@@ -82,10 +84,10 @@ public:
 	uint16_t getZeroPosition();
 
 	//mapping the angle with pos
-	uint16_t err_angle();
+	uint16_t normalize_angle(uint16_t angle);
 
 	//mapping the angle with pos
-	uint16_t angleMap();
+	uint16_t angleMap(uint16_t angle);
 
 
 
