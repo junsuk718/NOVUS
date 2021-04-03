@@ -1,4 +1,4 @@
-#include "setup.h"
+#include "Controller/setup.h"
 
 #ifdef I_CONTROLLER
 void setSpeedGain(float p, float d, float i){
@@ -28,43 +28,109 @@ void setAmplitudeGain(float gain){
     AMP_GAIN = gain;
 }
 
+float getStickPercent(uint16_t stick_pos){
+    float percent = map(stick_pos, RC_MIN, RC_MAX, 0, 10000) / 100.0;
+
+    return percent
+}
+
+/*
+ * '+'Vector = UP/RIGHT
+ * '-'Vector = DOWN/LEFT
+*/
+float getStickVector(uint16_t stick_pos){
+    float vector = map(stick_pos, RC_MIN, RC_MAX, -10000, 10000) / 100.0;
+
+    return vector;
+}
+
+float getStickScalar(float stick_vector){
+    float stick_scalar = 0;
+
+    if(stick_vector < 0){
+        stick_scalar = stick_vector * (-1);
+    }else{
+        stick_scalar = stick_vector;
+    }
+
+    return stick_scalar;
+}
+
+float checkMargin(float stick_vector){
+    if(stick_vector > MARGIN_RANGE*(-1) && stick_vector < MARGIN_RANGE){
+        stick_vector = 0;
+    }
+    return stick_vector;
+}
+
 SPT_Value setpoint(SPT_Value setpoint, RC rc, MOTOR motor){
     setpoint.speed = setSpeed(rc.throttle);
-    setpoint.roll_amplitude = setAmplitude(rc.roll, SPT_VALUE.speed, motor);
-    setpoint.pitch_amplitude = setAmplitude(rc.pitch, SPT_VALUE.speed, motor);
+    setpoint.amplitude = setAmplitude(rc, SPT_VALUE.speed, motor);
     setpoint.cyclic_shift = setCyclicShift(rc.roll, rc.pitch);
 
     return setpoint;
 }
 
 float setSpeed(uint16_t throttle){
-    float throttle_percent = stick2percent(throttle);
+    float throttle_percent = getStickPercent(throttle);
+
+    //!NOTE :: Percent to RPM @mhlee
+    float speed = map(throttle_percent, 0, 100, 500, 5900);
     
-    throttle_percent = throttle_percent * 100.0;
-    
-    return (map(throttle_percent, 0, 10000, 5000, 59000) / 10.0);
+    return speed;
 }
 
-float setAmplitude(uint16_t stick_pos, float setpoint_speed, MOTOR motor){
-    float stick_cmd = stick2percent(stick_pos) * 100;
-    float stick_vector = map(stick_cmd, 0, 10000, -10000, 10000) / 100.0;
-    if(stick_vector < 0){
-        float stick_scalar = stick_vector * (-1);
-    }else{
-        float stick_scalar = stick_vector;
-    }
-    return (stick_scalar * AMP_GAIN);
+float setAmplitude(RC rc, float setpoint_speed, MOTOR motor){
+    float roll_scalar = getStickScalar(getStickVector(rc.roll));
+    float pitch_scalar = getStickScalar(getStickVector(rc.pitch));
+
+    float cmd_scalar = (roll_scalar * 0.5) + (pitch_scalar * 0.5);
+
+    float amplitude = (cmd_scalar * AMP_GAIN);
+
+    return amplitude;
 }
 
 float setCyclicShift(uint16_t roll_stick_pos, uint16_t pitch_stick_pos){
-    float roll_cmd = stick2percent(stick_pos);
-    float pitch_cmd = stick2percent(stick_pos);
-    //!TODO :: 스틱간 비율에 따른 Shift 결정
-}
+    float roll_vector = getStickVector(roll_stick_pos);
+    float pitch_vector = getStickVector(pitch_stick_pos);
 
-//!NOTE :: 다른 기능으로 전환 가능성 다분.
-float stick2percent(uint16_t stick){
-    float val = map(stick, RC_MIN, RC_MAX, 0, 10000);
+    roll_vector = checkMargin(roll_vector);
+    pitch_vector = checkMargin(pitch_vector);
 
-    return val/100.0;
+    float shift = 0;
+
+    if(roll_vector == 0 && pitch_vector == 0){
+        shift = 0;
+    }else if(roll_vector == 0 && pitch_vector != 0){
+        if(roll_vector < 0){
+            shift = PI;
+        }else{
+            shift = 0;
+        }
+    }else if(roll_vector != 0 && pitch_vector == 0){
+        if(pitch_vector < 0){
+            shift = (3 * PI) / 2.0;
+        }else{
+            shift = PI / 2.0;
+        }
+    }else{
+        float shift_ratio = (PI/2) * (pitch_vector / (roll_vector+pitch_vector));
+
+        if(pitch_vector < 0){
+            if(roll_vector < 0){
+                shift = PI + shift_ratio
+            }else{
+                shift = (-1) * shift_ratio;
+            }
+        }else{
+            if(roll_vector < 0){
+                shift = PI - shift_ratio;
+            }else{
+                shift = shift_ratio;
+            }
+        }
+    }
+
+    return shift;
 }

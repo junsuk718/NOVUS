@@ -19,6 +19,8 @@
 //!NOTE :: I_gain은 현재 사용하지 않음. 사용시 주석 해제. @mhlee (2021.03.30)
 //#define I_CONTROLLER
 
+#define MARGIN_RANGE 3
+
 /*
  *
 */
@@ -41,8 +43,7 @@ struct Moment_controller_gain{
 typedef struct Set_Point_Value{
     float speed;
 
-    float pitch_amplitude;
-    float roll_amplitude;
+    float amplitude;
 
     float cyclic_shift;
 }SPT_Value;
@@ -60,12 +61,16 @@ void setMomentGain(float p, float d);
 #endif
 void setAmplitudeGain(float gain);
 
-struct Set_Point_Value setpoint(RC rc, MOTOR motor);
+float getStickPercent(uint16_t stick_pos);
+float getStickVector(uint16_t stick_pos);
+float getStickScalar(float stick_vector);
+
+float checkMargin(float stick_vector);
+
+SPT_Value setpoint(SPT_Value setpoint, RC rc, MOTOR motor);
 
 float setSpeed(uint16_t throttle);
-float setAmplitude(uint16_t stick_pos, float current_speed, MOTOR motor);
+float setAmplitude(RC rc, float setpoint_speed, MOTOR motor);
 float setCyclicShift(uint16_t roll_stick_pos, uint16_t pitch_stick_pos);
-
-float stick2percent(uint16_t stick);
 
 #endif
