@@ -1,0 +1,12 @@
+/*
+ * spi.c
+ *
+ *  Created on: 2021. 3. 31.
+ *      Author: sb030
+ */
+
+#include "spi.h"
+
+void SpiCall(){
+	HAL_SPI_Writepin(GPIOE, GPIO_PIN_4, GPIO_PIN_RESET);
+}
