@@ -20,9 +20,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
+#include "as5147.h"
 
 /* USER CODE END Includes */
 
@@ -68,6 +69,8 @@ static void MX_TIM1_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+AS5147 encoder(&hspi1, GPIOA, GPID_PIN_4);
+
 /* USER CODE END 0 */
 
 /**
@@ -78,6 +81,8 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 
+	uint16_t zero_position;
+	uint16_t zero_position_map;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -105,13 +110,32 @@ int main(void)
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 
+  zero_position = encoder.RawPos();
+
+  zero_position_map = encoder.angleMap(zero_position);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
+
+	  uint16_t current_angle = encoder.RawPos();
+	  uint16_t angle_map = encoder.angleMap(current_angle);
+
+	  uint16_t angle = current_angle_map - zero_position_map;
+	  angle  = encoder.normalize_angle(angle);
+
+
+
+	  if (encoder.error()){
+		  /*
+		   * print : encoder.checkerror
+		   */
+	  }
+
+	  /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
