@@ -15,7 +15,7 @@
 
 //constructor
 //spiConnection , GPIO pin set
-AS5147::AS5147(SPI_HangleTypeDef* hspi, GPIO_TypeDef* arg_ps, uint16_t arg_cs){
+AS5147::AS5147(SPI_HandleTypeDef* hspi, GPIO_TypeDef* arg_ps, uint16_t arg_cs){
 	_cs = arg_cs;
 	_ps = arg_ps;
 	_spi = hspi;
