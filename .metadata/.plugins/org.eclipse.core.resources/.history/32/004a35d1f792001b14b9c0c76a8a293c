@@ -1,0 +1,51 @@
+/**
+ *
+ * @file : as5147.c
+ * @brief : header for as5147.cpp
+ *
+ * */
+
+
+#include <as5147.h>
+
+
+//constructor
+AS5147::AS5147(){
+
+}
+
+
+/**
+ * parity word caculate
+ */
+uint8_t AS5147::spiCalcEvenParity(uint16_t value){
+	uint8_t cnt = 0;
+	uint8_t i;
+
+	for (i = 0; i < 16; i++)
+	{
+		if (value & 0x1)
+		{
+			cnt++;
+		}
+		value >>= 1;
+	}
+	return cnt & 0x1;
+}
+
+/*
+ * Read register from sensor
+ * register address 8bit로 주소 받기
+ * return register value
+ * uint8_t AS5147::ReadSpiCall(uint8_t address, int len);
+ *
+ */
+
+
+/*
+ * wrtie to register
+ *
+ */
+
+
+
