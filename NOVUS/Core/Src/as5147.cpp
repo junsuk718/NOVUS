@@ -118,7 +118,8 @@ uint16_t normalize_angle(uint16_t angle){
 	return angle;
 }
 
-
+//! XXX :: 연산 결과가 실수 일텐데 정수로 반환하는 이유가 있나요?
+//			제어기 측면에서는 실수를 선호합니다.					@mhlee
 uint16_t AS5147::angleMap(uint16_t angle){
 	/*
 	 * 14 bits = 2^(14) -1 = 16.383

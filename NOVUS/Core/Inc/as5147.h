@@ -19,6 +19,7 @@ extern "C" {
 
 
 class AS5147{
+	//! FIXME :: errorcode 정의 필요 @mhlee
 	uint8_t errorFlag = 0;
 
 
@@ -95,6 +96,7 @@ public:
 
 };
 
+//! XXX :: 2byte 할당한 이유? define 해버리는건? @mhlee
 const int AS5147_ERRFL              		   = 0x0001;	//error register
 const int AS5147_PROG        				   = 0x0003;	//Programming register
 const int AS5147_ZPOSM					       = 0x0016;	//Zero position MSB
