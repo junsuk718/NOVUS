@@ -12,7 +12,7 @@
 
 #include "spi.h"
 
-#define MAX_BUFF 50
+
 
 GPIO_TypeDef *GPIO;
 uint16_t GPIO_Pin;
@@ -55,3 +55,13 @@ uint8_t ReadSpiCall(uint8_t address, int len){
 	return pdata;
 }
 
+
+void WriteSpiCall(uint8_t address, uint8_t data){
+
+
+	HAL_SPI_Writepin(*GPIO, GPIO_Pin, GPIO_PIN_RESET);
+	HAL_SPI_Transmit(hspi, &address, 1, 30);
+	HAL_SPI_Receive(hspi, data, len, 30);
+	HAL_SPI_Writepin(*GPIO, GPIO_Pin, GPIO_PIN_SET);
+
+}
