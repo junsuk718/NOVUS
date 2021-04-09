@@ -8,6 +8,7 @@
 #ifndef INC_UART_H_
 #define INC_UART_H_
 
+#include "stm32f4xx_hal.h"
 
 struct PACKET{
 	uchar header;
@@ -16,5 +17,6 @@ struct PACKET{
 	uchar end;
 };
 
-
+void uart_set();
+void uart_write();
 #endif /* INC_UART_H_ */

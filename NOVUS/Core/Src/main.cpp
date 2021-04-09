@@ -361,7 +361,7 @@ static void MX_USART1_UART_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN USART1_Init 2 */
-
+  HAL_UART_Receive_DMA(&huart1, &byte_data, 16);
   /* USER CODE END USART1_Init 2 */
 
 }
@@ -456,7 +456,11 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+  spectrum_read(byte_data);
+  HAL_UART_Receive_DMA(&huart1, &byte_data, 16);
+}
 /* USER CODE END 4 */
 
 /**
