@@ -1,3 +1,4 @@
+ #pragma once
 /**
  *
  * @file : as5147.h
@@ -14,8 +15,7 @@ extern "C" {
 
 
 // include header file
-#include "stm32g4xx_hal.h"
-#include <math.h>
+#include "header.h"
 
 
 class AS5147{
