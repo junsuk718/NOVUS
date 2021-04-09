@@ -18,11 +18,8 @@ struct RC spectrum_read(struct RC rc){
         uint8_t phase = bit_data >> 15;
         uint8_t id = (bit_data & 0x7800) >> 11;
         uint16_t pos = bit_data & 0x07FF;
-#if 0
-        if(pos > 341 && pos < 1707 && phase == 1){
-#else
-        if(pos > 341 && pos < 1707){
-#endif
+        
+        if(pos >= RC_MIN && pos <= RC_MAX){
             channel[id].id = id;
             channel[id].pos = pos;
         }

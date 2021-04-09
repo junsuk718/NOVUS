@@ -24,6 +24,9 @@
 #define AUX7        10
 #define AUX8        11
 
+#define RC_MIN 342
+#define RC_MAX 1706
+
 uint16_t rc[7];
 struct RC{
 
