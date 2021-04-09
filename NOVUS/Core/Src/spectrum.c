@@ -4,12 +4,10 @@
 
 /** @J.Yeon
   * @brief  uart로 받은 값을 각 채널별 data 저장
-  * @param  None
-  * @retval 각 채널별 data 구조체(RC)
+  * @param  struct RC
+  * @retval 각 채널별 data(RC)
   */
-struct RC spectrum_read(){
-
-    struct RC rc;
+struct RC spectrum_read(struct RC rc){
 
     fade = byte_data[0];
     sys = byte_data[1];
@@ -20,8 +18,11 @@ struct RC spectrum_read(){
         uint8_t phase = bit_data >> 15;
         uint8_t id = (bit_data & 0x7800) >> 11;
         uint16_t pos = bit_data & 0x07FF;
-        
-        if(pos > 341 && pos < 1707 && phase == 0){
+#if 0
+        if(pos > 341 && pos < 1707 && phase == 1){
+#else
+        if(pos > 341 && pos < 1707){
+#endif
             channel[id].id = id;
             channel[id].pos = pos;
         }

@@ -51,7 +51,7 @@ UART_HandleTypeDef huart2;
 DMA_HandleTypeDef hdma_usart1_rx;
 
 /* USER CODE BEGIN PV */
-
+struct RC rc ={0,};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -458,8 +458,10 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-  spectrum_read(byte_data);
-  HAL_UART_Receive_DMA(&huart1, &byte_data, 16);
+  if(huart == &huart1){
+    rc = spectrum_read(rc);
+    HAL_UART_Receive_DMA(&huart1, &byte_data, 16);
+  }
 }
 /* USER CODE END 4 */
 
