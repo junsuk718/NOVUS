@@ -69,7 +69,7 @@ static void MX_TIM1_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-AS5147 encoder(&hspi1, GPIOA, GPID_PIN_4);
+AS5147 encoder;
 
 /* USER CODE END 0 */
 
@@ -110,6 +110,14 @@ int main(void)
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 
+/*
+* spi set
+
+*/
+  //SpiSet() 
+
+
+
   zero_position = encoder.RawPos();
 
   zero_position_map = encoder.angleMap(zero_position);
@@ -122,11 +130,16 @@ int main(void)
   {
 
 	  uint16_t current_angle = encoder.RawPos();
-	  uint16_t angle_map = encoder.angleMap(current_angle);
+	  float angle_map = encoder.angleMap(current_angle);
 
-	  uint16_t angle = current_angle_map - zero_position_map;
+    if (current_angle_map == zero_position_map){
+        
+    }
+
+	  float angle = current_angle_map - zero_position_map;
 	  angle  = encoder.normalize_angle(angle);
 
+    
 
 
 	  if (encoder.error()){

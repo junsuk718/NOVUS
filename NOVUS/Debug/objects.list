@@ -2,6 +2,7 @@
 "Core/Src/Controller/setup.o"
 "Core/Src/as5147.o"
 "Core/Src/main.o"
+"Core/Src/spi.o"
 "Core/Src/stm32g4xx_hal_msp.o"
 "Core/Src/stm32g4xx_it.o"
 "Core/Src/syscalls.o"

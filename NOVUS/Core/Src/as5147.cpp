@@ -11,17 +11,18 @@
 
 
 #include <as5147.h>
-
+#include <spi.h>
 
 //constructor
 //spiConnection , GPIO pin set
-AS5147::AS5147(SPI_HandleTypeDef* hspi, GPIO_TypeDef* arg_ps, uint16_t arg_cs){
-	_cs = arg_cs;
-	_ps = arg_ps;
-	_spi = hspi;
-	errorFlag = 0;
-	position = 0;
-}
+
+// AS5147::AS5147(SPI_HandleTypeDef* hspi, GPIO_TypeDef* arg_ps, uint16_t arg_cs){
+// 	_cs = arg_cs;
+// 	_ps = arg_ps;
+// 	_spi = hspi;
+// 	errorFlag = 0;
+// 	position = 0;
+// }
 
 /*
  *
@@ -51,28 +52,25 @@ AS5147::AS5147(SPI_HandleTypeDef* hspi, GPIO_TypeDef* arg_ps, uint16_t arg_cs){
  * return the raw angle directly
  */
 uint16_t AS5147::RawPos(){
-	/*
-	 *
-	 * return ReadSpiCall(AS5147_ANGLEUNC);
-	 */
+	
+	return ReadSpiCall(AS5147_ANGLEUNC);
 }
 
-uint16_t AS5147::pos(){
+// 제로포지션과의 각도 얻기
+int AS5147::pos(){
 
 	uint16_t rawpos;
 	int rotation;
 
 	rawpos = AS5147::RawPos();
 	rotation = int(data) - (int)position;
-	if(rotation > 8191) rotation = -((0x3FFF)-rotation);
+	if(rotation > 8191) rotation =- ((0x3FFF)-rotation);
 	return rotation;
 }
 
 uint16_t AS5147::getState(){
-	/*
-	 *
-	 * return ReadSpiCall(AS5147_DIAAGC);
-	 */
+	
+	  return ReadSpiCall(AS5147_DIAAGC);
 }
 
 uint8_t AS5147::agcGain(){
@@ -89,10 +87,7 @@ uint8_t error(){
  * check error register
  */
 uint8_t AS5147::checkerror(){
-	/*
-	 *
-	 * return ReadSpiCall(AS5147_ERRFL);
-	 */
+	 return ReadSpiCall(AS5147_ERRFL);
 }
 
 void AS5147::setZeroPosition(uint16_t zero_position){
@@ -103,7 +98,7 @@ uint16_t getZeroPosition(){
 	return position;
 }
 
-uint16_t normalize_angle(uint16_t angle){
+float normalize_angle(float angle){
 
 	#ifdef ANGLE_MODE_1
 			angle += 100;
@@ -118,21 +113,25 @@ uint16_t normalize_angle(uint16_t angle){
 	return angle;
 }
 
-//! XXX :: 연산 결과가 실수 일텐데 정수로 반환하는 이유가 있나요?
-//			제어기 측면에서는 실수를 선호합니다.					@mhlee
-uint16_t AS5147::angleMap(uint16_t angle){
+
+float AS5147::angleMap(uint16_t angle){
 	/*
 	 * 14 bits = 2^(14) -1 = 16.383
 	 * https://www.arduino.cc/en/Reference/Map
 	 */
-	return angle * (360 / 16383);
+	return (float)angle * ((float)360 / 16383);
 }
 
 
-uint16_t AS5147::systime(){
-	/*
-	 * return time
-	 */
+double AS5147::calctime(clock_t begin, clock_t end){
+	double result;
+	result = (double)(end - begin)/1000;	//second
+	return result;
 }
 
+float AS5147::calcRPM(double resTime){
+	float rpm;
+	rpm = (1/(float)resTime) * (float)60;
+	return rpm;
+}
 

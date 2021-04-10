@@ -8,6 +8,15 @@
 #ifndef __AS5147_H
 #define __AS5147_H
 
+#define AS5147_ERRFL 0x0001;	//error register
+#define AS5147_PROG 0x0003;	//Programming register
+#define AS5147_ZPOSM 0x0016;	//Zero position MSB
+#define AS5147_ZPOSL 0x0017;	//Zero position LSB/MAG diagnostic
+#define AS5147_DIAAGC 0x3FFC;	//Diagnostic and AGC
+#define AS5147_MAG 0x3FFD;	//CORDIC magnitude
+#define AS5147_ANGLEUNC 0x3FFE;	// Measured angle without dynamic angle error compensation
+#define  AS5147_ANGLECOM 0x3FFF;	// Measured angle with dynamic angle error compensation
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -16,13 +25,18 @@ extern "C" {
 // include header file
 #include "stm32g4xx_hal.h"
 #include <math.h>
+#include <time.h>
 
+typedef struct {
+	float ang				/*< 모터 각도		*/
+	float RPM					/*< 모터 속도		*/
+	float acceleration		/*< 모터 가속도		*/
+	float pwm				/*< Output			*/
+	float time				/*< cycle_time		*/
+}MOTOR;
 
 class AS5147{
-	//! FIXME :: errorcode 정의 필요 @mhlee
 	uint8_t errorFlag = 0;
-
-
 	uint16_t position;
 	uint16_t transaction(uint16_t data);
 
@@ -35,6 +49,7 @@ class AS5147{
 	//	SPI_HandleTypeDef* _spi;
 
 public:
+
 
 	/**
 	 * SPI
@@ -73,6 +88,7 @@ public:
 	 */
 	uint16_t getState();
 
+	uint8_t error();
 
 	// check error
 	uint8_t checkerror();
@@ -82,34 +98,25 @@ public:
 	void setZeroPosition(uint16_t zero_position);
 
 
-	// get the zero position
+	// return 현재 zero position
 	uint16_t getZeroPosition();
 
-	//mapping the angle with pos
-	uint16_t err_angle();
+	//return normalized angle
+	uint16_t normalize_angle(float angle);
 
 	//mapping the angle with pos
-	uint16_t angleMap();
+	uint16_t angleMap(uint16_t angle);
 
 
-	uint16_t systime();
+	double calctime(clock_t begin, clock_t end);
 
+	float calcRPM(double resTime);
+
+	
+	MOTOR motor();
 };
 
-//! XXX :: 2byte 할당한 이유? define 해버리는건? @mhlee
-const int AS5147_ERRFL              		   = 0x0001;	//error register
-const int AS5147_PROG        				   = 0x0003;	//Programming register
-const int AS5147_ZPOSM					       = 0x0016;	//Zero position MSB
-const int AS5147_ZPOSL					       = 0x0017;	//Zero position LSB/MAG diagnostic
-const int AS5147_DIAAGC                        = 0x3FFC;	//Diagnostic and AGC
-const int AS5147_MAG                           = 0x3FFD;	//CORDIC magnitude
-const int AS5147_ANGLEUNC					   = 0x3FFE;	// Measured angle without dynamic angle error compensation
-const int AS5147_ANGLECOM                      = 0x3FFF;	// Measured angle with dynamic angle error compensation
-
-
 #ifdef __cplusplus
-
-
 }
 #endif
 
