@@ -18,7 +18,7 @@
 
 
 void SpiSet(GPIO_TypeDef *GPIO_x,uint16_t GPIO_Pin_Num,SPI_HandleTypeDef *hspi_x);
-uint8_t ReadSpiCall(uint8_t address, int len);
+uint8_t ReadSpiCall(uint8_t address);
 void WriteSpiCall(uint8_t address, uint8_t data);
 
 #endif /* INC_SPI_H_ */
