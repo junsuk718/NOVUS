@@ -69,7 +69,7 @@ static void MX_TIM1_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-AS5147 encoder;
+AS5147 encoder();
 
 /* USER CODE END 0 */
 
@@ -80,9 +80,11 @@ AS5147 encoder;
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  clock_t begin, end;
 	uint16_t zero_position;
 	uint16_t zero_position_map;
+  double time;
+  float rpm;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -122,6 +124,7 @@ int main(void)
 
   zero_position_map = encoder.angleMap(zero_position);
 
+  
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -133,20 +136,29 @@ int main(void)
 	  float angle_map = encoder.angleMap(current_angle);
 
     if (current_angle_map == zero_position_map){
-        
+
     }
 
 	  float angle = current_angle_map - zero_position_map;
+    if (flag==0){
+      begin = clock();
+    }
 	  angle  = encoder.normalize_angle(angle);
-
     
-
-
 	  if (encoder.error()){
 		  /*
 		   * print : encoder.checkerror
 		   */
 	  }
+    if (angle == 0){
+      encoder.flagPoint();
+      end = clock();
+    }
+
+    time = encoder.calctime(begin, end);
+    rpm = encoder.calcRPM(time);
+
+    
 
 	  /* USER CODE END WHILE */
 

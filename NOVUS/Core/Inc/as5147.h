@@ -8,14 +8,15 @@
 #ifndef __AS5147_H
 #define __AS5147_H
 
-#define AS5147_ERRFL 0x0001;	//error register
-#define AS5147_PROG 0x0003;	//Programming register
-#define AS5147_ZPOSM 0x0016;	//Zero position MSB
-#define AS5147_ZPOSL 0x0017;	//Zero position LSB/MAG diagnostic
-#define AS5147_DIAAGC 0x3FFC;	//Diagnostic and AGC
-#define AS5147_MAG 0x3FFD;	//CORDIC magnitude
-#define AS5147_ANGLEUNC 0x3FFE;	// Measured angle without dynamic angle error compensation
-#define  AS5147_ANGLECOM 0x3FFF;	// Measured angle with dynamic angle error compensation
+#define AS5147_ERRFL 0x0001	//error register
+#define AS5147_PROG 0x0003	//Programming register
+#define AS5147_ZPOSM 0x0016	//Zero position MSB
+#define AS5147_ZPOSL 0x0017	//Zero position LSB/MAG diagnostic
+#define AS5147_DIAAGC 0x3FFC	//Diagnostic and AGC
+#define AS5147_MAG 0x3FFD	//CORDIC magnitude
+#define AS5147_ANGLEUNC 0x3FFE	// Measured angle without dynamic angle error compensation
+#define  AS5147_ANGLECOM 0x3FFF	// Measured angle with dynamic angle error compensation
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -38,8 +39,7 @@ typedef struct {
 class AS5147{
 	uint8_t errorFlag = 0;
 	uint16_t position;
-	uint16_t transaction(uint16_t data);
-
+	int flag = 0;
 //	uint8_t dout;
 //	uint8_t din;
 //	uint8_t clk;
@@ -50,7 +50,7 @@ class AS5147{
 
 public:
 
-
+	AS5147();
 	/**
 	 * SPI
 	 * CONNECTION
@@ -112,7 +112,7 @@ public:
 
 	float calcRPM(double resTime);
 
-	
+	int flagPoint();
 	MOTOR motor();
 };
 
