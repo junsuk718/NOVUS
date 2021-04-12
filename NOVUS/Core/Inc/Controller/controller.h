@@ -25,4 +25,6 @@ float MomentController(SPT_Value setpoint, MOTOR motor);
 void outputMotor(float speed_command, float moment_command, MODE mode);
 void PWM_Generator(float command);
 
+uint32_t scalarToPwm(float command);
+
 #endif

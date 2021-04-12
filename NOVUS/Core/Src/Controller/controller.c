@@ -62,3 +62,12 @@ void PWM_Generator(float command){
     uint32_t pwm_command = scalarToPwm(command);
     htim1.Instance->CCR1 = pwm_command;
 }
+
+//! TODO:: PWM period(duty) setting in MX setup
+uint32_t scalarToPwm(float command){
+#if 1
+    return (uint32_t)map(command, 0, 100, RC_MIN, RC_MAX);
+#else
+    return (uint32_t)map(command, 0, 100, 0, PWM_PERIOD);
+#endif
+}
