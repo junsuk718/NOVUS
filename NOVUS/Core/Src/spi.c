@@ -12,7 +12,7 @@
 
 #include "spi.h"
 
-#define MAX_BUFF 50
+
 
 GPIO_TypeDef *GPIO;
 uint16_t GPIO_Pin;
@@ -36,10 +36,9 @@ void SpiSet(GPIO_TypeDef *GPIO_x,uint16_t GPIO_Pin_Num,SPI_HandleTypeDef *hspi_x
 /** @J.Yeon
   * @brief  Spi통신을 통한 데이터 수신
   * @param  address GPIO포트(A..G)
-  * @param  len GPIO통신을 하기위한 핀넘버(0..15)
   * @retval pdata Spi통신을 통해 받은 데이터
   */
-uint8_t ReadSpiCall(uint8_t address, int len){
+uint8_t ReadSpiCall(uint8_t address){
 
 	uint8_t pdata[MAX_BUFF];
 
@@ -49,9 +48,19 @@ uint8_t ReadSpiCall(uint8_t address, int len){
 
 	HAL_SPI_Writepin(*GPIO, GPIO_Pin, GPIO_PIN_RESET);
 	HAL_SPI_Transmit(hspi, &address, 1, 30);
-	HAL_SPI_Receive(hspi, pdata, len, 30);
+	HAL_SPI_Receive(hspi, pdata, 2, 30);
 	HAL_SPI_Writepin(*GPIO, GPIO_Pin, GPIO_PIN_SET);
 
 	return pdata;
 }
 
+
+void WriteSpiCall(uint8_t address, uint8_t data){
+
+
+	HAL_SPI_Writepin(*GPIO, GPIO_Pin, GPIO_PIN_RESET);
+	HAL_SPI_Transmit(hspi, &address, 1, 30);
+	HAL_SPI_Receive(hspi, data, 1, 30);
+	HAL_SPI_Writepin(*GPIO, GPIO_Pin, GPIO_PIN_SET);
+
+}
