@@ -1,3 +1,4 @@
+ #pragma once
 /*
  * spi.h
  *
@@ -8,8 +9,7 @@
 #ifndef INC_SPI_H_
 #define INC_SPI_H_
 
-#include "stm32g4xx_hal_spi.h"
-#include "stm32g4xx_hal_gpio.h"
+#include "header.h"
 
 #define MAX_BUFF 50
 

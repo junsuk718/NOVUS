@@ -25,7 +25,7 @@
 #define __SETUP_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "novus_math.h"
+#include "header.h"
 
 /** @addtogroup NOVUS_Controller
   * @{
@@ -56,7 +56,7 @@
 /**
   * @brief speed controller에 사용될 gain
   */
-struct Speed_controller_gain{
+typedef struct Speed_controller_gain{
     float P_gain;       /*!< Proportional Controller Gain   */
 
     float D_gain;       /*!< Differential  Controller Gain  */
@@ -64,7 +64,7 @@ struct Speed_controller_gain{
     #ifdef I_CONTROLLER
         float I_gain;   /*!< Integral  Controller Gain      */
     #endif
-};
+}SPD_GAIN;
 
 /**
   * @}
@@ -74,7 +74,7 @@ struct Speed_controller_gain{
 /**
   * @brief moment controller에 사용될 gain
   */
-struct Moment_controller_gain{
+typedef struct Moment_controller_gain{
     float P_gain;       /*!< Proportional Controller Gain   */
 
     float D_gain;       /*!< Differential  Controller Gain  */
@@ -82,7 +82,7 @@ struct Moment_controller_gain{
     #ifdef I_CONTROLLER
         float I_gain;   /*!< Integral  Controller Gain      */
     #endif
-};
+}MNT_GAIN;
 
 /**
   * @}
@@ -111,8 +111,8 @@ typedef struct {
   * @brief Global Variable to use
   */
 float AMP_GAIN;                             /*!< Amplitude gain will multiply with RC controller's Scalar */
-struct Speed_controller_gain SPD_GAIN;
-struct Moment_controller_gain MNT_GAIN;
+SPD_GAIN speed_gain;
+MNT_GAIN moment_gain;
 
 /**
   * @}
