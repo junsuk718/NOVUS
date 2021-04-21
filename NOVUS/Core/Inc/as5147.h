@@ -29,11 +29,19 @@
 
   /* Define to prevent recursive inclusion -------------------------------------*/
 
-
 #ifndef INC_AS5147_H_
 #define INC_AS5147_H_
 
 #include "spi.h"
+#include "Controller/novus_math.h"
+
+/**
+  * @}
+  */
+  
+/**
+  * @}
+  */
 
 #define AS5047P_OPT_ENABLED 		1
 #define AS5047P_OPT_DISABLED 		0
@@ -57,6 +65,10 @@
 #define AS5047P_ABIRES_2048 	2048
 #define AS5047P_ABIRES_4096 	4096
 
+/**
+  * @}
+  */
+
 // --- Volatile registers
 #define AS5047P_NOP          	0x0000
 #define AS5047P_ERRFL        	0x0001
@@ -66,11 +78,19 @@
 #define AS5047P_ANGLEUNC     	0x3FFE
 #define AS5047P_ANGLECOM     	0x3FFF
 
+/**
+  * @}
+  */
+
 // --- Non-volatile registers
 #define AS5047P_ZPOSM        	0x0016
 #define AS5047P_ZPOSL        	0x0017
 #define AS5047P_SETTINGS1    	0x0018
 #define AS5047P_SETTINGS2    	0x0019
+
+/**
+  * @}
+  */
 
 // --- Fields in registers
 #define AS5047P_ERRFL_PARERR		( 1 << 2)
@@ -104,6 +124,13 @@
 #define AS5047P_SETTINGS2_HYS		( 0x0003 << 3)
 #define AS5047P_SETTINGS2_ABIRES	( 0x0007 << 5)
 
+/**
+  * @}
+  */
+  
+/**
+  * @}
+  */
 
 /**
  *  @brief spi Transaction command & Write & Read Frame bit
@@ -126,9 +153,15 @@ typedef union{
 	FrameBit values;
 }Frame;
 
+/**
+  * @}
+  */
+
+  
 /*
 * @brief motor information struct
 */
+
 typedef struct motor_inforamtion{
 	float pre_ang;
 	float ang;				/*< 모터 각도		*/
@@ -139,21 +172,53 @@ typedef struct motor_inforamtion{
 	float time;				/*< cycle_time		*/
 }MOTOR;
 
+/**
+  * @}
+  */
+  
+/**
+  * @}
+  */
+
+/*
+* @brief Global variable motor have motor information
+*/
 MOTOR motor;
 
+/**
+  * @}
+  */
+  
+/**
+  * @}
+  */
+
 /* encoder functions */
+
 int8_t as5147_Init(SPI_HandleTypeDef* hspix, GPIO_TypeDef* GPIO_port, uint16_t GPIO_num);
 int8_t as5147_setZeroPosition();
 float as5147_readPosition();
 
+/**
+  * @}
+  */
+
 /* register R/W functions */
+
 uint16_t registerRead(uint16_t resgister_address);
 int8_t registerWrite(uint16_t resgister_address, uint16_t data);
 
+/**
+  * @}
+  */
+
 /* register Frame functions*/
+
 Frame packCommandFrame(uint16_t data, uint8_t rw);
 uint8_t calcParity(uint16_t data);
 
+
 /* calculate RPM*/
 float calcRPM(float dif);
+
 #endif /* INC_AS5147_H_ */

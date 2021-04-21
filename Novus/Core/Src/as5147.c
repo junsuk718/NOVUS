@@ -12,7 +12,29 @@
  */
 #include "as5147.h"
 
+
+/**
+  * @}
+  */
+
+
+/*
+* @brief as5147 must get chip_num through as5147 _Init() 
+*        when call addChip() in spi.h will return chip_num 0 to 255
+*		 chip_num use every times of SPI protocal communication
+*/
 static uint8_t chip_num;
+
+
+/**
+  * @}
+  */
+
+
+/**
+  * @}
+  */
+
 
 /**
   * @brief  initialize as5147 setting
@@ -22,6 +44,7 @@ static uint8_t chip_num;
   * @retval boolean
   * seccess 0, if fail return false
   */
+
 int8_t as5147_Init(SPI_HandleTypeDef* hspix, GPIO_TypeDef* GPIO_port, uint16_t GPIO_num){
 
 	chip_num = addChip(hspix, GPIO_port, GPIO_num);
@@ -29,8 +52,8 @@ int8_t as5147_Init(SPI_HandleTypeDef* hspix, GPIO_TypeDef* GPIO_port, uint16_t G
 		return -1;
 	}
 
-	registerRead(AS5047P_ERRFL);						//useless : need to delete @junsuk
-	int16_t error = registerRead(AS5047P_ERRFL);		/*< check AS5147 error by reading error register*/
+	registerRead(AS5047P_ERRFL);
+	int16_t error = registerRead(AS5047P_ERRFL);
 
 	if(error != 0) return -1;
 
@@ -39,11 +62,17 @@ int8_t as5147_Init(SPI_HandleTypeDef* hspix, GPIO_TypeDef* GPIO_port, uint16_t G
 
 
 /**
+  * @}
+  */
+
+
+/**
   * @brief  SET zero position from as5147
   * @param  none
   * @retval boolean
   * seccess 0, if fail return false
   */
+
 int8_t as5147_setZeroPosition(){
 	Frame current_zero_position = { 0, };
 	Frame current_position = { 0, };
@@ -75,11 +104,18 @@ int8_t as5147_setZeroPosition(){
 	return 0;
 }
 
+
+/**
+  * @}
+  */
+
+
 /**
   * @brief  read current position from AS5147
   * @param  none
   * @retval position value without DAEC (0 ~ 360)
   */
+
 float as5147_readPosition(){
 	Frame position = { 0, };
 
@@ -87,6 +123,10 @@ float as5147_readPosition(){
 
 	return position.values.data * 360 / 16384.;
 }
+
+/**
+  * @}
+  */
 
 float as5147_readMag(){
 	float mag = 0;
@@ -96,29 +136,34 @@ float as5147_readMag(){
 	return mag;
 }
 
+
+/**
+  * @}
+  */
+
+
 /**
   * @brief  read register according to register address
   * @param  register_address register_address based on AS5147 datasheet & comment on as5147.h
   * @retval register value in register's address
   */
+
 uint16_t registerRead(uint16_t resgister_address){
 	int16_t register_data = 0;
 
-#if 0
-	Frame command = packCommandFrame(resgister_address, AS5047P_ACCESS_READ);
-	readWrite2ByteRegister(&command.raw, chip_num);
-
-	command = packCommandFrame(AS5047P_NOP, AS5047P_ACCESS_READ);
-	register_data = readWrite2ByteRegister(&command.raw, chip_num);
-#else
 	Frame command = packCommandFrame(resgister_address, AS5047P_ACCESS_READ);
 	write2ByteRegister(&command.raw, chip_num);
 
 	register_data = read2ByteRegister(chip_num);
-#endif
 
 	return register_data;
 }
+
+
+/**
+  * @}
+  */
+
 
 /**
   * @brief  write data to register address
@@ -126,6 +171,7 @@ uint16_t registerRead(uint16_t resgister_address){
   * @param  data register value based on AS5147 datasheet
   * @retval return 0
   */
+
 int8_t registerWrite(uint16_t resgister_address, uint16_t data){
 	HAL_StatusTypeDef state;
 
@@ -140,6 +186,12 @@ int8_t registerWrite(uint16_t resgister_address, uint16_t data){
 	return 0;
 }
 
+
+/**
+  * @}
+  */
+
+
 /**
   * @brief SPI transaction consists of a 16-bit command frame 
   * 		followed by a 16-bit data frame. 
@@ -147,6 +199,7 @@ int8_t registerWrite(uint16_t resgister_address, uint16_t data){
   * @param  data register value based on AS5147 datasheet
   * @retval Frame struct which has data & R/W state & parity Bit 
   */
+
 Frame packCommandFrame(uint16_t data, uint8_t rw){
 	Frame frame = { 0, };
 	frame.values.data = data & AS5047P_FRAME_DATA;
@@ -155,6 +208,12 @@ Frame packCommandFrame(uint16_t data, uint8_t rw){
 
 	return frame;
 }
+
+
+/**
+  * @}
+  */
+
 
 /**
   * @brief calculate parity bit
@@ -172,6 +231,10 @@ uint8_t calcParity(uint16_t data){
 	return (uint8_t)data;
 }
 
+/**
+  * @}
+  */
+
 
 /**
   * @brief calculate rpm based on motor variable angle
@@ -180,7 +243,9 @@ uint8_t calcParity(uint16_t data){
   */
 
 float calcRPM(float dif){
-		float rpm;
-		rpm = (dif/(float)360)*60000;
-		return rpm;
+	if(dif < 0) dif += 360;
+	float w = (dif * (2*PI)/360) * 10000;			// rad/sec
+	float rpm = (w * 60 / (2*PI));							// rotation/min
+
+	return rpm;
 }

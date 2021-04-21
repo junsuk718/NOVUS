@@ -7,7 +7,28 @@
  */
 #include "spi.h"
 
-static CHIP_LIST chip_list[255];
+/**
+  * @}
+  */
+
+
+/**
+  * @}
+  */
+
+/*
+* @brief SPI Protocoal information list of every single chip which use spi communication
+*/
+static CHIP_LIST chip_list[256];
+
+/**
+  * @}
+  */
+
+
+/**
+  * @}
+  */
 
 /**
   * @brief  initialize chip
@@ -21,7 +42,7 @@ uint8_t addChip(SPI_HandleTypeDef* hspix, GPIO_TypeDef* GPIO_port, uint16_t GPIO
 	uint8_t chip_num = 0;
 	uint8_t index = 0;
 
-	for(; index < 255; index++){
+	for(; index < 256; index++){
 		if(chip_list[index].CS_pin == 0){
 			chip_num = index;
 			break;
@@ -42,6 +63,11 @@ uint8_t addChip(SPI_HandleTypeDef* hspix, GPIO_TypeDef* GPIO_port, uint16_t GPIO
 
 
 /**
+  * @}
+  */
+
+
+/**
   * @brief  reset chip setting to zero
   * @param  chip_num chip number
   * @retval none
@@ -54,6 +80,11 @@ void deleteChip(uint16_t chip_num){
 
 
 /**
+  * @}
+  */
+
+
+/**
   * @brief  read register value
   * @param  chip_num spi chip number
   * @retval data in register
@@ -62,11 +93,11 @@ uint16_t read2ByteRegister(uint8_t chip_num){
 	uint16_t read_data = 0;
 	uint16_t* pbuffer = &read_data;
 
-	HAL_GPIO_WritePin(chip_list[chip_num].CS_port, chip_list[chip_num].CS_pin, GPIO_PIN_RESET);		/*!<  set GPIO Pin output low*/
+	HAL_GPIO_WritePin(chip_list[chip_num].CS_port, chip_list[chip_num].CS_pin, GPIO_PIN_RESET);
 
-	HAL_StatusTypeDef state = HAL_SPI_Receive(chip_list[chip_num].hspi, (uint8_t*)pbuffer, 1, HAL_MAX_DELAY);		/*!< Receive an amount of data in blocking mode */
+	HAL_StatusTypeDef state = HAL_SPI_Receive(chip_list[chip_num].hspi, (uint8_t*)pbuffer, 1, HAL_MAX_DELAY);
 
-	HAL_GPIO_WritePin(chip_list[chip_num].CS_port, chip_list[chip_num].CS_pin, GPIO_PIN_SET);		/*!<  set GPIO Pin output high*/
+	HAL_GPIO_WritePin(chip_list[chip_num].CS_port, chip_list[chip_num].CS_pin, GPIO_PIN_SET);
 
 	if(state != HAL_OK){
 		return state;
@@ -74,6 +105,12 @@ uint16_t read2ByteRegister(uint8_t chip_num){
 
 	return read_data;
 }
+
+
+/**
+  * @}
+  */
+
 
 /**
   * @brief  write register value
@@ -91,6 +128,11 @@ HAL_StatusTypeDef write2ByteRegister(uint16_t* command, uint8_t chip_num){
 
 	return state;
 }
+
+
+/**
+  * @}
+  */
 
 
 /**

@@ -62,8 +62,8 @@ all: main-build
 main-build: Novus.elf secondary-outputs
 
 # Tool invocations
-Novus.elf: $(OBJS) $(USER_OBJS) F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Novus.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Novus.elf: $(OBJS) $(USER_OBJS) F:\School\GraduateProject\git\NOVUS_master\Novus\STM32G431KBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Novus.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\NOVUS_master\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
