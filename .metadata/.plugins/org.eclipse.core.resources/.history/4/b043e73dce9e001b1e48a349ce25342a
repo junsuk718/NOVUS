@@ -1,0 +1,19 @@
+#include "main_loop.h"
+
+SPT_Value setpoint_value = { 0, };
+float speed_command = 0;
+float moment_command = 0;
+MODE mode = 0;
+
+void main_loop(){
+	setpoint_value = setpoint(rc);
+	mode = getMode(rc);
+	if(mode == NON_MOMENT){
+		speed_command = SpeedController(SPT_Value setpoint, MOTOR motor);
+		moment_command = 0;
+	}else if(mode == MOMENT){
+		moment_command = MomentController();
+		speed_command = 0;
+	}
+	outputMotor(float speed_command, float moment_command, MODE mode)
+}

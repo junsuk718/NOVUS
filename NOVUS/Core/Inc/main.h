@@ -29,9 +29,10 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32g4xx_hal.h"
-#include "header.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "main_loop.h"
 
 /* USER CODE END Includes */
 
@@ -56,24 +57,18 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+void TimerISR(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define USART2_TX_Pin GPIO_PIN_2
-#define USART2_TX_GPIO_Port GPIOA
-#define USART2_RX_Pin GPIO_PIN_3
-#define USART2_RX_GPIO_Port GPIOA
-#define DataTransmit2PC_Pin GPIO_PIN_9
-#define DataTransmit2PC_GPIO_Port GPIOA
-#define SpectrumRC_Pin GPIO_PIN_10
-#define SpectrumRC_GPIO_Port GPIOA
-#define T_SWDIO_Pin GPIO_PIN_13
-#define T_SWDIO_GPIO_Port GPIOA
-#define T_SWCLK_Pin GPIO_PIN_14
-#define T_SWCLK_GPIO_Port GPIOA
-#define SPI1_CS_Pin GPIO_PIN_4
-#define SPI1_CS_GPIO_Port GPIOA
+#define SPI3_CS_Pin GPIO_PIN_1
+#define SPI3_CS_GPIO_Port GPIOA
+#define TMTC_Pin GPIO_PIN_2
+#define TMTC_GPIO_Port GPIOA
+#define MOTOR_OUTPUT_Pin GPIO_PIN_8
+#define MOTOR_OUTPUT_GPIO_Port GPIOA
+#define Spektrum_Pin GPIO_PIN_7
+#define Spektrum_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

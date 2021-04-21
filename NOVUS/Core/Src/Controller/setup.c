@@ -16,7 +16,7 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#include "header.h"
+#include "Controller/setup.h"
 
 /**
   * @}
@@ -39,15 +39,15 @@
   */
 #ifdef I_CONTROLLER
 void setSpeedGain(float p, float d, float i){
-    SPD_GAIN.P_gain = p;
-    SPD_GAIN.D_gain = d;
-    SPD_GAIN.P_gain = i;
+	speed_gain.P_gain = p;
+	speed_gain.D_gain = d;
+	speed_gain.I_gain = i;
 }
 
 void setMomentGain(float p, float d, float i){
-    MNT_GAIN.P_gain = p;
-    MNT_GAIN.D_gain = d;
-    MNT_GAIN.P_gain = i;
+	moment_gain.P_gain = p;
+	moment_gain.D_gain = d;
+	moment_gain.I_gain = i;
 }
 #else
 /**
@@ -59,13 +59,13 @@ void setMomentGain(float p, float d, float i){
   * @retval None
   */
 void setSpeedGain(float p, float d){
-    SPD_GAIN.P_gain = p;
-    SPD_GAIN.D_gain = d;
+	speed_gain.P_gain = p;
+	speed_gain.D_gain = d;
 }
 
 void setMomentGain(float p, float d){
-    MNT_GAIN.P_gain = p;
-    MNT_GAIN.D_gain = d;
+	moment_gain.P_gain = p;
+	moment_gain.D_gain = d;
 }
 #endif
 
@@ -76,7 +76,7 @@ void setMomentGain(float p, float d){
   * @retval None
   */
 void setAmplitudeGain(float gain){
-    AMP_GAIN = gain;
+	amplitude_gain = gain;
 }
 
 
@@ -94,7 +94,7 @@ void setAmplitudeGain(float gain){
   * @retval percent of stick position
   */
 float getStickPercent(uint16_t stick_pos){
-    float percent = map(stick_pos, RC_MIN, RC_MAX, 0, 10000) / 100.0;
+    float percent = map(stick_pos, RC_MIN, RC_MAX, 0, 100);
 
     return percent;
 }
@@ -107,7 +107,7 @@ float getStickPercent(uint16_t stick_pos){
   * @retval percent vector of stick position
   */
 float getStickVector(uint16_t stick_pos){
-    float vector = map(stick_pos, RC_MIN, RC_MAX, -10000, 10000) / 100.0;
+    float vector = map(stick_pos, RC_MIN, RC_MAX, -100, 100);
 
     return vector;
 }
@@ -180,7 +180,7 @@ float setSpeed(uint16_t throttle){
     float throttle_percent = getStickPercent(throttle);
 
     //!NOTE :: Percent to RPM @mhlee
-    float speed = map(throttle_percent, 0, 100, 500, 5900);
+    float speed = map(throttle_percent, 0, 100, RPM_MIN, RPM_MAX);
     
     return speed;
 }
@@ -195,9 +195,12 @@ float setAmplitude(uint16_t roll_stick_pos, uint16_t pitch_stick_pos){
     float roll_scalar = getStickScalar(getStickVector(roll_stick_pos));
     float pitch_scalar = getStickScalar(getStickVector(pitch_stick_pos));
 
-    float cmd_scalar = (roll_scalar * 0.5) + (pitch_scalar * 0.5);
+    float pitch_ratio = pitch_scalar / (roll_scalar + pitch_scalar);
+    float roll_ratio = 1 - pitch_ratio;
 
-    float amplitude = (cmd_scalar * AMP_GAIN);
+    float cmd_scalar = (pitch_scalar * pitch_ratio) + (roll_scalar * roll_ratio);
+
+    float amplitude = (cmd_scalar * amplitude_gain);
 
     return amplitude;
 }
@@ -214,6 +217,9 @@ float setCyclicShift(uint16_t roll_stick_pos, uint16_t pitch_stick_pos){
 
     roll_vector = checkMargin(roll_vector);
     pitch_vector = checkMargin(pitch_vector);
+
+    float roll_scalar = getStickScalar(roll_vector);
+    float pitch_scalar = getStickScalar(pitch_vector);
 
     float shift = 0;
 
@@ -232,17 +238,17 @@ float setCyclicShift(uint16_t roll_stick_pos, uint16_t pitch_stick_pos){
             shift = PI / 2.0;           /*!< There is only positive Roll command  */
         }
     }else{
-        float shift_ratio = (PI/2) * (pitch_vector / (roll_vector+pitch_vector));
+        float shift_ratio = (PI/2) * (roll_scalar / (roll_scalar+pitch_scalar));
 
         if(pitch_vector < 0){
             if(roll_vector < 0){
                 shift = PI + shift_ratio;       /*!< There is negative Pitch and negative Roll command  */
             }else{
-                shift = (-1) * shift_ratio;     /*!< There is negative Pitch and positive Roll command  */
+                shift = PI - shift_ratio;     /*!< There is negative Pitch and positive Roll command  */
             }
         }else{
             if(roll_vector < 0){
-                shift = PI - shift_ratio;       /*!< There is positive Pitch and negative Roll command  */
+                shift = (2*PI) - shift_ratio;       /*!< There is positive Pitch and negative Roll command  */
             }else{
                 shift = shift_ratio;            /*!< There is positive Pitch and positive Roll command  */
             }

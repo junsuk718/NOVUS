@@ -1,0 +1,38 @@
+02:16:40 **** Incremental Build of configuration Debug for project IntegralTest ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/as5147.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/as5147.d" -MT"Core/Src/as5147.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/as5147.o"
+arm-none-eabi-gcc "../Core/Src/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/setup.d" -MT"Core/Src/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/setup.o"
+In file included from ../Core/Inc/main.h:38,
+                 from ../Core/Inc/spi.h:12,
+                 from ../Core/Inc/as5147.h:12,
+                 from ../Core/Src/as5147.c:8:
+../Core/Inc/controller.h:27:43: error: unknown type name 'MOTOR'
+   27 | float speedController(SPT_Value setpoint, MOTOR motor);
+      |                                           ^~~~~
+../Core/Inc/controller.h:28:44: error: unknown type name 'MOTOR'
+   28 | float momentController(SPT_Value setpoint, MOTOR motor);
+      |                                            ^~~~~
+In file included from ../Core/Inc/main.h:38,
+                 from ../Core/Inc/spi.h:12,
+                 from ../Core/Inc/as5147.h:12,
+                 from ../Core/Inc/setup.h:28,
+                 from ../Core/Src/setup.c:19:
+../Core/Inc/controller.h:27:23: error: unknown type name 'SPT_Value'
+   27 | float speedController(SPT_Value setpoint, MOTOR motor);
+      |                       ^~~~~~~~~
+../Core/Inc/controller.h:27:43: error: unknown type name 'MOTOR'
+   27 | float speedController(SPT_Value setpoint, MOTOR motor);
+      |                                           ^~~~~
+../Core/Inc/controller.h:28:24: error: unknown type name 'SPT_Value'
+   28 | float momentController(SPT_Value setpoint, MOTOR motor);
+      |                        ^~~~~~~~~
+../Core/Inc/controller.h:28:44: error: unknown type name 'MOTOR'
+   28 | float momentController(SPT_Value setpoint, MOTOR motor);
+      |                                            ^~~~~
+make: *** [Core/Src/subdir.mk:55: Core/Src/as5147.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Core/Src/subdir.mk:65: Core/Src/setup.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+02:16:40 Build Failed. 9 errors, 0 warnings. (took 303ms)
+
