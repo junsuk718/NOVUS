@@ -1,0 +1,14 @@
+#pragma once
+/*
+ * spi.h
+ *
+ *  Created on: Apr 15, 2021
+ *      Author: mined
+ */
+
+#ifndef INC_SPI_H_
+#define INC_SPI_H_
+
+void SPI_Set(SPI_HandleTypeDef* hspix, GPIO_TypeDef* cs_pin_port, uint16_t cs_pin_num);
+
+#endif /* INC_SPI_H_ */

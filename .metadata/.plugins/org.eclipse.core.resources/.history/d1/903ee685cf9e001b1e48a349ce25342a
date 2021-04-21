@@ -1,0 +1,29 @@
+/*
+ * main_loop.h
+ *
+ *  Created on: Apr 17, 2021
+ *      Author: mined
+ */
+
+#ifndef INC_MAIN_LOOP_H_
+#define INC_MAIN_LOOP_H_
+
+#include "main.h"
+
+#define SPD_P_GAIN 1
+#define SPD_D_GAIN 0
+#ifdef I_CONTROLLER
+#define SPD_I_GAIN 0
+#endif
+
+#define MNT_P_GAIN 1
+#define MNT_D_GAIN 0
+#ifdef I_CONTROLLER
+#define MNT_I_GAIN 0
+#endif
+
+#define AMPLITUDE_GAIN 0
+
+void main_loop();
+
+#endif /* INC_MAIN_LOOP_H_ */
