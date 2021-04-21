@@ -1,0 +1,32 @@
+#pragma once
+/*
+ * spi.h
+ *
+ *  Created on: Apr 15, 2021
+ *      Author: mined
+ */
+
+#ifndef INC_SPI_H_
+#define INC_SPI_H_
+
+#include "main_loop.h"
+
+typedef struct chip_info_list{
+	SPI_HandleTypeDef* hspi;
+	GPIO_TypeDef* CS_port;
+	uint16_t CS_pin;
+}CHIP_LIST;
+
+uint8_t addChip(SPI_HandleTypeDef* hspix, GPIO_TypeDef* GPIO_port, uint16_t GPIO_num);
+void deleteChip(uint16_t chip_num);
+
+uint8_t readByteRegister(uint8_t chip_num);
+uint16_t read2ByteRegister(uint8_t chip_num);
+
+HAL_StatusTypeDef writeByteRegister(uint8_t* command, uint8_t chip_num);
+HAL_StatusTypeDef write2ByteRegister(uint16_t* command, uint8_t chip_num);
+
+uint8_t readWriteByteRegister(uint8_t* command, uint8_t chip_num);
+uint16_t readWrite2ByteRegister(uint16_t* command, uint8_t chip_num);
+
+#endif /* INC_SPI_H_ */

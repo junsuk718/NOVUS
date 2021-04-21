@@ -1,0 +1,7 @@
+#include "main_loop.h"
+
+SPT_Value setpoint_value = { 0, };
+
+void main_loop(){
+	setpoint_value = setpoint(rc);
+}

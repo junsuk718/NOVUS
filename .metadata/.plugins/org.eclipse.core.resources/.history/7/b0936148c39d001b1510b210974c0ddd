@@ -1,0 +1,31 @@
+/*
+ * spi.c
+ *
+ *  Created on: Apr 15, 2021
+ *      Author: mined
+ */
+
+
+#include "spi.h"
+
+uint8_t addChip(SPI_HandleTypeDef* hspix, GPIO_TypeDef* GPIO_port, uint16_t GPIO_num){
+	uint8_t chip_num = 0;
+	uint8_t index = 0;
+
+	for(; index < 255; index++){
+		if(chip_list[index].CS_pin == 0){
+			chip_num = index;
+			break;
+		}
+	}
+
+	if(index != 255){
+		chip_list[index].hspi = hspix;
+		chip_list[index].CS_port = GPIO_port;
+		chip_list[index].CS_pin = GPIO_num;
+
+		return 0;
+	}else{
+		return -1;
+	}
+}
