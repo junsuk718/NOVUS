@@ -4,7 +4,7 @@ TIM_HandleTypeDef* time_handler;
 
 void controllerInit(TIM_HandleTypeDef* htimex){
 	time_handler = htimex;
-	time_handler->Instance->CCR3 = 1000;
+	time_handler->Instance->CCR1 = 1000;
 #ifdef I_CONTROLLER
 	setSpeedGain(7, 4.5, 0);
 #else
@@ -12,7 +12,7 @@ void controllerInit(TIM_HandleTypeDef* htimex){
 #endif
 	setAmplitudeGain(1);
 
-	HAL_TIM_PWM_Start(time_handler, TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(time_handler, TIM_CHANNEL_1);
 }
 
 float PD_Controller(float p, float d, float error){
@@ -71,6 +71,9 @@ float speedController(SPT_Value setpoint, MOTOR motor){
 #endif
 
     pre_error = error;
+
+    control_value += motor.rpm;
+
     return control_value;
 }
 
@@ -98,10 +101,11 @@ void outputMotor(float speed_command, float moment_command, MODE mode){
             command = 1200;
             break;
         case NON_MOMENT:
-            command = map(speed_command, 0, 59000, 1190, 2000);
+            //command = map(speed_command, 600, 5900, 1190, 2000);
+        	command = speed_command;
             break;
         case MOMENT:
-            command = map(moment_command, 0, 59000, 1190, 2000);
+            command = map(moment_command, RPM_MIN, RPM_MAX, PWM_MIN, PWM_MAX);
             break;
     }
 
@@ -110,5 +114,5 @@ void outputMotor(float speed_command, float moment_command, MODE mode){
 
 void PWM_Generator(float command){
     motor.pwm = command;
-    time_handler->Instance->CCR3 = command;
+    time_handler->Instance->CCR1 = command;
 }

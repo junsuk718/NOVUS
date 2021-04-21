@@ -32,7 +32,7 @@ Core/Src/stm32g4xx_it.o: ../Core/Src/stm32g4xx_it.c ../Core/Inc/main.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
  ../Core/Inc/main_loop.h ../Core/Inc/Controller/controller.h \
  ../Core/Inc/Controller/setup.h ../Core/Inc/as5147.h ../Core/Inc/spi.h \
- ../Core/Inc/spectrum.h ../Core/Inc/Controller/novus_math.h \
+ ../Core/Inc/Controller/novus_math.h ../Core/Inc/spectrum.h \
  ../Core/Inc/stm32g4xx_it.h
 
 ../Core/Inc/main.h:
@@ -109,8 +109,8 @@ Core/Src/stm32g4xx_it.o: ../Core/Src/stm32g4xx_it.c ../Core/Inc/main.h \
 
 ../Core/Inc/spi.h:
 
-../Core/Inc/spectrum.h:
-
 ../Core/Inc/Controller/novus_math.h:
+
+../Core/Inc/spectrum.h:
 
 ../Core/Inc/stm32g4xx_it.h:

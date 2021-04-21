@@ -1,0 +1,10 @@
+22:33:57 **** Incremental Build of configuration Debug for project ModuleTest ****
+make -j12 all 
+arm-none-eabi-size   ModuleTest.elf 
+   text	   data	    bss	    dec	    hex	filename
+  43920	    488	   5480	  49888	   c2e0	ModuleTest.elf
+Finished building: default.size.stdout
+ 
+
+22:33:57 Build Finished. 0 errors, 0 warnings. (took 252ms)
+

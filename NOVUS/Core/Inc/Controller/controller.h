@@ -6,6 +6,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "Controller/setup.h"
 
+#define PWM_MIN 1190
+#define PWM_MAX 1850
+
 typedef enum control_mode{
   CUT_OFF = 0,
   ARM,
