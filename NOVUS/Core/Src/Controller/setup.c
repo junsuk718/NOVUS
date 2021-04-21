@@ -180,7 +180,7 @@ float setSpeed(uint16_t throttle){
     float throttle_percent = getStickPercent(throttle);
 
     //!NOTE :: Percent to RPM @mhlee
-    float speed = map(throttle_percent, 0, 100, RPM_MIN, RPM_MAX);
+    float speed = map(throttle_percent, 0, 100, 500, 59000);
     
     return speed;
 }

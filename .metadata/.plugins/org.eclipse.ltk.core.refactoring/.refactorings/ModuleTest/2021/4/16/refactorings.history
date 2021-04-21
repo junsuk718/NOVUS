@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;ModuleTest/Core/Src/main_loop&apos; to &apos;main_loop.c&apos;" description="Rename resource &apos;main_loop&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/main_loop" name="main_loop.c" stamp="1618585316508" updateReferences="true"/>
-</session>

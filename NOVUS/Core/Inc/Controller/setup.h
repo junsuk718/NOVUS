@@ -27,6 +27,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "as5147.h"
 #include "spectrum.h"
+#include "Controller/novus_math.h"
 
 /** @addtogroup NOVUS_Controller
   * @{
@@ -49,13 +50,6 @@
   * @brief no operate margin when RC controller stick in center position
   */
 #define RC_MARGIN_RANGE 3   /*!< Recommend range 1~5        */
-
-/**
-  * @defgroup Controller_Setup
-  * @brief Minimum & Maximum rang of RPM
-  */
-#define RPM_MIN 600
-#define RPM_MAX 7600
 
 /**
   * @}
