@@ -1,5 +1,5 @@
-Core/Src/as5147.o: ../Core/Src/as5147.cpp ../Core/Inc/as5147.h \
- ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h \
+Core/Src/as5147.o: ../Core/Src/as5147.c ../Core/Inc/as5147.h \
+ ../Core/Inc/spi.h ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h \
  ../Core/Inc/stm32g4xx_hal_conf.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_def.h \
@@ -32,6 +32,8 @@ Core/Src/as5147.o: ../Core/Src/as5147.cpp ../Core/Inc/as5147.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h
 
 ../Core/Inc/as5147.h:
+
+../Core/Inc/spi.h:
 
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 

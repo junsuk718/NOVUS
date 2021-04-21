@@ -25,7 +25,9 @@
 #define __SETUP_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "header.h"
+#include "as5147.h"
+#include "spectrum.h"
+#include "Controller/novus_math.h"
 
 /** @addtogroup NOVUS_Controller
   * @{
@@ -36,7 +38,7 @@
   * @defgroup Controller_Setup
   * @brief Convert PD Controller to PID Controller
   */
-/*#define I_CONTROLLER*/    /*!< Using PID Controller or PD Controller */
+//#define I_CONTROLLER    /*!< Using PID Controller or PD Controller */
 
 /**
   * @}
@@ -110,7 +112,7 @@ typedef struct {
 /**
   * @brief Global Variable to use
   */
-float AMP_GAIN;                             /*!< Amplitude gain will multiply with RC controller's Scalar */
+float amplitude_gain;                             /*!< Amplitude gain will multiply with RC controller's Scalar */
 SPD_GAIN speed_gain;
 MNT_GAIN moment_gain;
 
