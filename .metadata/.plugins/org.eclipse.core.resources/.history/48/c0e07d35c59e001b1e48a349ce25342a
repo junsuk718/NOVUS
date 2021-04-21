@@ -1,4 +1,0 @@
-#include "main.h"
-#include "as5147.h"
-#include "Controller/controller.h"
-#include "main_loop.h"

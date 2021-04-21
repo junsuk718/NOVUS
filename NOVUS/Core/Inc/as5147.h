@@ -1,224 +1,127 @@
-#pragma once
 /**
-  ******************************************************************************
-  * @file           : as5147.h
-  * @brief          : Header for as5147.c file.
-  *                   This file contains the common defines of the application.
-  * @author NOVUS Graduation Project Team
-  ******************************************************************************
-  * @details
-  *
-  * Setting & Management
-  * 
-  * as5147 SETTING
-  *     as5147_Init - as5147 initialize
-  *		as5147_setZeroPosition - set angle to zeroposition
-  *		as5147_readPosition - read angle from as5147
-  *
-  * as5147 R/W
-  * 	registerRead - read register value
-  * 	registerWrite - write register value
-  * 	packCommandFrame - 
-  * 	calcParity
-  * 
-  * angle caculator
-  * 	calcRPM - calculate RPM
-  *
-  ******************************************************************************
-  */
+ *
+ * @file : as5147.h
+ * @brief : header for as5147.cpp
+ *
+ * */
 
-  /* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __AS5147_H
+#define __AS5147_H
 
-#ifndef INC_AS5147_H_
-#define INC_AS5147_H_
+#define AS5147_ERRFL 0x0001	//error register
+#define AS5147_PROG 0x0003	//Programming register
+#define AS5147_ZPOSM 0x0016	//Zero position MSB
+#define AS5147_ZPOSL 0x0017	//Zero position LSB/MAG diagnostic
+#define AS5147_DIAAGC 0x3FFC	//Diagnostic and AGC
+#define AS5147_MAG 0x3FFD	//CORDIC magnitude
+#define AS5147_ANGLEUNC 0x3FFE	// Measured angle without dynamic angle error compensation
+#define  AS5147_ANGLECOM 0x3FFF	// Measured angle with dynamic angle error compensation
 
-#include "spi.h"
-#include "Controller/novus_math.h"
 
-/**
-  * @}
-  */
-  
-/**
-  * @}
-  */
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-#define AS5047P_OPT_ENABLED 		1
-#define AS5047P_OPT_DISABLED 		0
 
-#define AS5047P_ACCESS_WRITE 		0
-#define AS5047P_ACCESS_READ 		1
+// include header file
+#include "stm32g4xx_hal.h"
+#include <math.h>
+#include <time.h>
 
-#define AS5047P_FRAME_PARD		( 1 << 15)
-#define AS5047P_FRAME_EF 		( 1 << 14)
-#define AS5047P_FRAME_DATA		0x3FFF
-
-#define AS5047P_ABIRES_100 	100
-#define AS5047P_ABIRES_200 	200
-#define AS5047P_ABIRES_400 	400
-#define AS5047P_ABIRES_800 	800
-#define AS5047P_ABIRES_1200 	1200
-#define AS5047P_ABIRES_1600 	1600
-#define AS5047P_ABIRES_2000 	2000
-#define AS5047P_ABIRES_4000 	4000
-#define AS5047P_ABIRES_1024 	1024
-#define AS5047P_ABIRES_2048 	2048
-#define AS5047P_ABIRES_4096 	4096
-
-/**
-  * @}
-  */
-
-// --- Volatile registers
-#define AS5047P_NOP          	0x0000
-#define AS5047P_ERRFL        	0x0001
-#define AS5047P_PROG        	0x0003
-#define AS5047P_DIAAGC       	0x3FFC
-#define AS5047P_MAG          	0x3FFD
-#define AS5047P_ANGLEUNC     	0x3FFE
-#define AS5047P_ANGLECOM     	0x3FFF
-
-/**
-  * @}
-  */
-
-// --- Non-volatile registers
-#define AS5047P_ZPOSM        	0x0016
-#define AS5047P_ZPOSL        	0x0017
-#define AS5047P_SETTINGS1    	0x0018
-#define AS5047P_SETTINGS2    	0x0019
-
-/**
-  * @}
-  */
-
-// --- Fields in registers
-#define AS5047P_ERRFL_PARERR		( 1 << 2)
-#define AS5047P_ERRFL_INVCOMM		( 1 << 1)
-#define AS5047P_ERRFL_FRERR		( 1 << 0)
-#define AS5047P_PROG_PROGVER		( 1 << 6)
-#define AS5047P_PROG_PROGOTP		( 1 << 3)
-#define AS5047P_PROG_OTPREF		( 1 << 2)
-#define AS5047P_PROG_PROGEN		( 1 << 0)
-#define AS5047P_DIAAGC_MAGL		( 1 << 11)
-#define AS5047P_DIAAGC_MAGH		( 1 << 10)
-#define AS5047P_DIAAGC_COF		( 1 << 9)
-#define AS5047P_DIAAGC_LF		( 1 << 8)
-#define AS5047P_DIAAGC_AGC		( 0x00FF << 0)
-#define AS5047P_MAG_CMAG		( 0x3FFF << 0)
-#define AS5047P_ANGLEUNC_CORDICANG	( 0x3FFF << 0)
-#define AS5047P_ANGLECOM_DAECANG	( 0x3FFF << 0)
-#define AS5047P_ZPOSM_ZPOSM		( 0x00FF << 0)
-#define AS5047P_ZPOSL_COMP_H_ERR_EN	( 1 << 7)
-#define AS5047P_ZPOSL_COMP_I_ERR_EN	( 1 << 6)
-#define AS5047P_ZPOSL_ZPOSL		( 0x003F << 0)
-#define AS5047P_SETTINGS1_BIT0		( 1 << 0)
-#define AS5047P_SETTINGS1_NOISESET	( 1 << 1)
-#define AS5047P_SETTINGS1_DIR		( 1 << 2)
-#define AS5047P_SETTINGS1_UVW_ABI	( 1 << 3)
-#define AS5047P_SETTINGS1_DAECDIS	( 1 << 4)
-#define AS5047P_SETTINGS1_ABIBIN	( 1 << 5)
-#define AS5047P_SETTINGS1_DATASEL	( 1 << 6)
-#define AS5047P_SETTINGS1_PWMON		( 1 << 7)
-#define AS5047P_SETTINGS2_UVWPP		( 0x0007 << 0)
-#define AS5047P_SETTINGS2_HYS		( 0x0003 << 3)
-#define AS5047P_SETTINGS2_ABIRES	( 0x0007 << 5)
-
-/**
-  * @}
-  */
-  
-/**
-  * @}
-  */
-
-/**
- *  @brief spi Transaction command & Write & Read Frame bit
- *         15bit : parity bit
- *         14bit : R/W
- *         13:0bit : data
- */
-typedef struct __attribute__ ((packed)) {
-	uint16_t data:14;
-	uint16_t rw:1;
-	uint16_t pard:1;
-} FrameBit;
-
-/**
- *  @brief spi Transaction command & Write & Read Frame
- *  @details 
- */
-typedef union{
-	uint16_t raw;
-	FrameBit values;
-}Frame;
-
-/**
-  * @}
-  */
-
-  
-/*
-* @brief motor information struct
-*/
-
-typedef struct motor_inforamtion{
-	float pre_ang;
-	float ang;				/*< 모터 각도		*/
-	float pre_rpm;
-	float rpm;					/*< 모터 속도		*/
-	float acceleration;		/*< 모터 가속도		*/
-	float pwm;				/*< Output			*/
-	float time;				/*< cycle_time		*/
+typedef struct {
+	float ang				/*< 모터 각도		*/
+	float RPM					/*< 모터 속도		*/
+	float acceleration		/*< 모터 가속도		*/
+	float pwm				/*< Output			*/
+	float time				/*< cycle_time		*/
 }MOTOR;
 
-/**
-  * @}
-  */
-  
-/**
-  * @}
-  */
+class AS5147{
+	uint8_t errorFlag = 0;
+	uint16_t position;
+	int flag = 0;
+//	uint8_t dout;
+//	uint8_t din;
+//	uint8_t clk;
+	//	uint16_t _cs;
+	//	uint16_t cs;
+	//	GPIO_TypeDef* _ps;
+	//	SPI_HandleTypeDef* _spi;
 
-/*
-* @brief Global variable motor have motor information
-*/
-MOTOR motor;
+public:
 
-/**
-  * @}
-  */
-  
-/**
-  * @}
-  */
+	AS5147();
+	/**
+	 * SPI
+	 * CONNECTION
+	 * SpiSet();
+	 * will be written by jypark
+	 */
 
-/* encoder functions */
-
-int8_t as5147_Init(SPI_HandleTypeDef* hspix, GPIO_TypeDef* GPIO_port, uint16_t GPIO_num);
-int8_t as5147_setZeroPosition();
-float as5147_readPosition();
-
-/**
-  * @}
-  */
-
-/* register R/W functions */
-
-uint16_t registerRead(uint16_t resgister_address);
-int8_t registerWrite(uint16_t resgister_address, uint16_t data);
-
-/**
-  * @}
-  */
-
-/* register Frame functions*/
-
-Frame packCommandFrame(uint16_t data, uint8_t rw);
-uint8_t calcParity(uint16_t data);
+	/*
+	 * read()
+	 * write()
+	 * will be written by jypark
+	 */
 
 
-/* calculate RPM*/
-float calcRPM(float dif);
+	/*
+	 * Returns the raw angle directly from the sensor
+	 */
+	uint16_t RawPos();
 
-#endif /* INC_AS5147_H_ */
+
+	/**
+	 * Get the rotation of the sensor relative to the zero position.
+	 */
+	int pos();
+
+
+
+	/**
+	 * Return Automatic Gain Control
+	 */
+	uint8_t agcGain();
+
+	/*
+	 * return state register value
+	 */
+	uint16_t getState();
+
+	uint8_t error();
+
+	// check error
+	uint8_t checkerror();
+
+
+	//set the zero position
+	void setZeroPosition(uint16_t zero_position);
+
+
+	// return 현재 zero position
+	uint16_t getZeroPosition();
+
+	//return normalized angle
+	uint16_t normalize_angle(float angle);
+
+	//mapping the angle with pos
+	uint16_t angleMap(uint16_t angle);
+
+
+	double calctime(clock_t begin, clock_t end);
+
+	float calcRPM(double resTime);
+
+	int flagPoint();
+	MOTOR motor();
+};
+
+#ifdef __cplusplus
+}
+#endif
+
+
+
+#endif /* __MAIN_H */
+
+

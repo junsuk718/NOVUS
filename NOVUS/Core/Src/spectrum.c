@@ -1,3 +1,4 @@
+
 #include "spectrum.h"
 
 
@@ -6,7 +7,8 @@
   * @param  struct RC
   * @retval 각 채널별 data(RC)
   */
-void spectrum_read(){
+struct RC spectrum_read(struct RC rc){
+
     fade = byte_data[0];
     sys = byte_data[1];
 
@@ -31,4 +33,6 @@ void spectrum_read(){
 	rc. aux1 = channel[4].pos;
 	rc. aux2 = channel[5].pos;
 	rc. aux3 = channel[6].pos;
+
+    return rc;
 }

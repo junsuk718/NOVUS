@@ -25,8 +25,7 @@
 #define __SETUP_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "as5147.h"
-#include "spectrum.h"
+#include "header.h"
 
 /** @addtogroup NOVUS_Controller
   * @{
@@ -37,7 +36,7 @@
   * @defgroup Controller_Setup
   * @brief Convert PD Controller to PID Controller
   */
-//#define I_CONTROLLER    /*!< Using PID Controller or PD Controller */
+/*#define I_CONTROLLER*/    /*!< Using PID Controller or PD Controller */
 
 /**
   * @}
@@ -49,13 +48,6 @@
   * @brief no operate margin when RC controller stick in center position
   */
 #define RC_MARGIN_RANGE 3   /*!< Recommend range 1~5        */
-
-/**
-  * @defgroup Controller_Setup
-  * @brief Minimum & Maximum rang of RPM
-  */
-#define RPM_MIN 600
-#define RPM_MAX 7600
 
 /**
   * @}
@@ -118,7 +110,7 @@ typedef struct {
 /**
   * @brief Global Variable to use
   */
-float amplitude_gain;                             /*!< Amplitude gain will multiply with RC controller's Scalar */
+float AMP_GAIN;                             /*!< Amplitude gain will multiply with RC controller's Scalar */
 SPD_GAIN speed_gain;
 MNT_GAIN moment_gain;
 

@@ -1,9 +1,0 @@
-as5147.c:48:8:as5147_Init	32	static
-as5147.c:76:8:as5147_setZeroPosition	24	static
-as5147.c:119:7:as5147_readPosition	16	static
-as5147.c:131:7:as5147_readMag	16	static
-as5147.c:151:10:registerRead	24	static
-as5147.c:175:8:registerWrite	24	static
-as5147.c:203:7:packCommandFrame	24	static
-as5147.c:223:9:calcParity	16	static
-as5147.c:245:7:calcRPM	24	static
