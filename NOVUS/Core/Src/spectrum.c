@@ -3,8 +3,8 @@
 
 /** @J.Yeon
   * @brief  uart로 받은 값을 각 채널별 data 저장
-  * @param  struct RC
-  * @retval 각 채널별 data(RC)
+  * @param  None
+  * @retval None
   */
 void spectrum_read(){
     fade = byte_data[0];
