@@ -1,0 +1,19 @@
+#include "main_loop.h"
+
+void main_loop(uint32_t* loop_time){
+
+	setpoint_value = setpoint(rc);
+	mode = getMode(rc);
+
+	if(mode == NON_MOMENT){
+		speed_command = speedController(setpoint_value, motor);
+	}else if(mode == MOMENT){
+		speed_command = speedController(setpoint_value, motor);
+		moment_command = momentController(setpoint_value, motor);
+	}else{
+		speed_command = 0;
+		moment_command = 0;
+	}
+
+	outputMotor(speed_command, moment_command, mode);
+}
