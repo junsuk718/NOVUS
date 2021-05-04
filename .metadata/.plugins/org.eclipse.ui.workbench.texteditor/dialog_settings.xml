@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="HAL_UART_Transmit("/>
+		<item key="selection" value="sensor_flag"/>
 		<list key="findhistory">
+			<item value="sensor_flag"/>
 			<item value="HAL_UART_Transmit("/>
 			<item value="Transmit("/>
 			<item value="Transmit"/>
@@ -22,7 +23,6 @@
 			<item value="HAL_SPI_Transmit("/>
 			<item value="TIME"/>
 			<item value="HAL_SPI_MspInit"/>
-			<item value="HAL_SPI_Msp"/>
 		</list>
 		<list key="replacehistory">
 		</list>
