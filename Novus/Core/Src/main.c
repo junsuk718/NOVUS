@@ -55,7 +55,7 @@ DMA_HandleTypeDef hdma_usart1_rx;
 volatile uint32_t gtick = 0;
 uint8_t loop_flag = 1;
 uint8_t buffer[50];
-uint8_t index = 0;
+uint8_t transpc_index = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/

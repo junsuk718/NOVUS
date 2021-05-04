@@ -1,0 +1,11 @@
+setup.c:61:6:setSpeedGain	0	static
+setup.c:66:6:setMomentGain	0	static
+setup.c:78:6:setAmplitudeGain	0	static
+setup.c:96:7:getStickPercent	0	static
+setup.c:109:7:getStickVector	0	static
+setup.c:120:7:getStickScalar	0	static
+setup.c:138:7:checkMargin	0	static
+setup.c:179:7:setSpeed	8	static
+setup.c:194:7:setAmplitude	16	static
+setup.c:214:7:setCyclicShift	16	static
+setup.c:160:11:setpoint	72	static

@@ -27,13 +27,13 @@ struct PAYLOAD{
 	uint16_t E;
 	uint16_t F;
 	uint16_t G;
-};
+}payload;
 
 struct TrnasPacket{
 	uint8_t header;
 	uint8_t len;
 	uint8_t msgid;
-	struct PAYLOAD;
+	struct PAYLOAD payload;
 	uint8_t end;
 };
 
@@ -43,6 +43,5 @@ void trans_pc(uint8_t len, uint8_t msgid);
 
 
 
-struct TransPacket tp;
-struct PAYLOAD payload;
+struct TrnasPacket tp;
 #endif /* INC_TX_PC_H_ */
