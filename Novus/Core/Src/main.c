@@ -130,8 +130,6 @@ int main(void)
   {
 	  if(loop_flag){
 		main_loop();
-		sprintf(buffer, "%f\t%f\r\n", motor.rpm, motor.pwm);
-		HAL_UART_Transmit(&huart2, buffer, 50, 1000);
 		loop_time = HAL_GetTick() - gtick;
 		gtick = HAL_GetTick();
 	  }

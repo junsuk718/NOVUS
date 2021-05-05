@@ -1,10 +1,10 @@
-20:56:14 **** Incremental Build of configuration Debug for project NOVUS ****
+16:22:54 **** Incremental Build of configuration Debug for project NOVUS ****
 make -j12 all 
 arm-none-eabi-size   NOVUS.elf 
    text	   data	    bss	    dec	    hex	filename
-  44704	    488	   5656	  50848	   c6a0	NOVUS.elf
+  43712	    488	   5656	  49856	   c2c0	NOVUS.elf
 Finished building: default.size.stdout
  
 
-20:56:15 Build Finished. 0 errors, 0 warnings. (took 481ms)
+16:22:55 Build Finished. 0 errors, 0 warnings. (took 432ms)
 
