@@ -24,7 +24,11 @@ void spectrum_read(){
     }
 
     // 각 채널별 입력값 입력
+#if 1
     rc.throttle = channel[0].pos;
+#else
+    rc.throttle = RC_MIN + 100;
+#endif
 	rc. roll = channel[1].pos;
 	rc. pitch = channel[2].pos;
 	rc. yaw = channel[3].pos;

@@ -242,10 +242,9 @@ uint8_t calcParity(uint16_t data){
   * @retval revolution per minute
   */
 
-float calcRPM(float dif){
+float calcRPM(float dif, float loop_time){
 	if(dif < 0) dif += 360;
-	float w = (dif * (2*PI)/360) * 10000;			// rad/sec
+	float w = (dif * (2*PI)/360.) * (1./loop_time);			// rad/sec
 	float rpm = (w * 60 / (2*PI));							// rotation/min
-
 	return rpm;
 }

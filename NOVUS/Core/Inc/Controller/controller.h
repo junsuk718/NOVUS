@@ -18,6 +18,9 @@ typedef enum control_mode{
 
 float pre_error;
 float integral_error;
+
+float moment_pre_error;
+
 uint16_t loop_time, start_time;
 
 void controllerInit(TIM_HandleTypeDef* htimex);
@@ -28,7 +31,7 @@ float PID_Controller(float p, float i, float d, float error);
 MODE getMode(RC rc);
 
 float speedController(SPT_Value setpoint, MOTOR motor);
-float momentController(SPT_Value setpoint, MOTOR motor);
+float momentController(SPT_Value* setpoint, MOTOR motor);
 
 void outputMotor(float speed_command, float moment_command, MODE mode);
 void PWM_Generator(float command);

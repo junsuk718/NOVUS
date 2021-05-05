@@ -1,1 +1,2 @@
 novus_math.c:3:7:map	40	static
+novus_math.c:9:7:getLPF_RPM	40	static

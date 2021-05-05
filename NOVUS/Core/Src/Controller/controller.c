@@ -6,11 +6,15 @@ void controllerInit(TIM_HandleTypeDef* htimex){
 	time_handler = htimex;
 	time_handler->Instance->CCR1 = 1000;
 #ifdef I_CONTROLLER
-	setSpeedGain(7, 4.5, 0);
+	integral_error = 0;
+	setSpeedGain(0.132, 0.01147, 0.00015);
 #else
-	setSpeedGain(1, 1.5);
+	//setSpeedGain(0.11, 0.0063);
+	//setMomentGain(0.11, 0.0063);
+	setSpeedGain(0.02, 0.0001);
+	setMomentGain(0.03, 0);
 #endif
-	setAmplitudeGain(1);
+	setAmplitudeGain(70);
 
 	HAL_TIM_PWM_Start(time_handler, TIM_CHANNEL_1);
 }
@@ -19,11 +23,8 @@ float PD_Controller(float p, float d, float error){
     float control_value = 0;
 
     float proportion_controll_value = error * p;
-#if 0
-    float differential_controll_value = ((pre_error - error) / loop_time) * d;
-#else
-    float differential_controll_value = (pre_error - error) * d;
-#endif
+
+    float differential_controll_value = ((error - pre_error) / (loop_time/100000.)) * d;
 
     control_value = proportion_controll_value + differential_controll_value;
 
@@ -34,13 +35,11 @@ float PID_Controller(float p, float d, float i, float error){
     float control_value = 0;
 
     float proportion_controll_value = error * p;
+
     integral_error += error;
     float integral_controll_value = integral_error * i;
-#if 0
-    float differential_controll_value = ((pre_error - error) / loop_time) * d;
-#else
-    float differential_controll_value = (pre_error - error) * d;
-#endif
+
+    float differential_controll_value = ((error - pre_error) / (loop_time/100000.)) * d;
 
     control_value = proportion_controll_value + differential_controll_value + integral_controll_value;
 
@@ -72,17 +71,28 @@ float speedController(SPT_Value setpoint, MOTOR motor){
 
     pre_error = error;
 
-    control_value += motor.rpm;
-
     return control_value;
 }
 
-float momentController(SPT_Value setpoint, MOTOR motor){
-	return 0;
+float momentController(SPT_Value* setpoint, MOTOR motor){
+	setpoint->moment_speed = setpoint->speed + (sin((motor.ang*(2*PI/360.)) + setpoint->cyclic_shift) * setpoint->amplitude);
+
+    float error = setpoint->moment_speed - motor.rpm;
+
+    if(setpoint->moment_speed <= setpoint->speed + 1 && setpoint->moment_speed >= setpoint->speed - 1 ){
+		error = 0;
+	}
+
+    float control_value = PD_Controller(moment_gain.P_gain, moment_gain.D_gain, error);
+
+    moment_pre_error = error;
+
+	return control_value;
 }
 
+volatile float command = 0;
+
 void outputMotor(float speed_command, float moment_command, MODE mode){
-    float command;
 
     //! NOTE :: rpm command to throttle percent scalar
     switch(mode){
@@ -101,11 +111,15 @@ void outputMotor(float speed_command, float moment_command, MODE mode){
             command = 1200;
             break;
         case NON_MOMENT:
-            //command = map(speed_command, 600, 5900, 1190, 2000);
-        	command = speed_command;
+            command = motor.pwm + (speed_command / 50.);
+            if(command < PWM_MIN) command = PWM_MIN;
+            else if(command > PWM_MAX) command = PWM_MAX;
             break;
         case MOMENT:
-            command = map(moment_command, RPM_MIN, RPM_MAX, PWM_MIN, PWM_MAX);
+            //command = motor.pwm + (speed_command / 10) + (moment_command / 10);
+        	command = motor.pwm + (moment_command / 50.);
+            if(command < PWM_MIN) command = PWM_MIN;
+            else if(command > PWM_MAX) command = PWM_MAX;
             break;
     }
 

@@ -20,7 +20,7 @@ void main_loop(void){
 void getSensor(void){
 	motor.pre_ang = motor.ang;
 	sens_time = HAL_GetTick() - sens_start;
-	motor.ang = as5147_readPosition();
+	motor.ang = map(as5147_readPosition(), 180, 360, 0, 360);
 	sens_start = HAL_GetTick();
 
 	motor.pre_rpm = motor.rpm;

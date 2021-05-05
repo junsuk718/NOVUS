@@ -1,4 +1,5 @@
-Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
+Core/Src/tx_pc.o: ../Core/Src/tx_pc.c ../Core/Inc/tx_pc.h \
+ ../Core/Inc/spectrum.h ../Core/Inc/as5147.h ../Core/Inc/spi.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h \
  ../Core/Inc/stm32g4xx_hal_conf.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h \
@@ -30,12 +31,15 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
- ../Core/Inc/main_loop.h ../Core/Inc/Controller/controller.h \
- ../Core/Inc/Controller/setup.h ../Core/Inc/as5147.h ../Core/Inc/spi.h \
- ../Core/Inc/Controller/novus_math.h ../Core/Inc/spectrum.h \
- ../Core/Inc/tx_pc.h
+ ../Core/Inc/Controller/novus_math.h
 
-../Core/Inc/main.h:
+../Core/Inc/tx_pc.h:
+
+../Core/Inc/spectrum.h:
+
+../Core/Inc/as5147.h:
+
+../Core/Inc/spi.h:
 
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h:
 
@@ -99,18 +103,4 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h:
 
-../Core/Inc/main_loop.h:
-
-../Core/Inc/Controller/controller.h:
-
-../Core/Inc/Controller/setup.h:
-
-../Core/Inc/as5147.h:
-
-../Core/Inc/spi.h:
-
 ../Core/Inc/Controller/novus_math.h:
-
-../Core/Inc/spectrum.h:
-
-../Core/Inc/tx_pc.h:

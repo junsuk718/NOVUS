@@ -16,6 +16,7 @@ float speed_command;
 float moment_command;
 MODE mode;
 
-void main_loop();
+void main_loop(void);
+void getSensor(void);
 
 #endif /* INC_MAIN_LOOP_H_ */

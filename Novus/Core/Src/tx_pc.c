@@ -68,5 +68,5 @@ void trans_pc(uint8_t len, uint8_t msgid){
 	tp.payload = payload;
 	tp.end = ETX;
 
-	HAL_UART_Transmit(&huart2, &tp, sizeof(tp), 1000); //읽어드린 값 터미널로 출력
+	HAL_UART_Transmit(&huart2, (uint8_t*)&tp, sizeof(tp), 1000); //읽어드린 값 터미널로 출력
 }

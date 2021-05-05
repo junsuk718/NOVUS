@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include "tx_pc.h"
 
 /* USER CODE END Includes */
 
@@ -45,6 +46,7 @@ SPI_HandleTypeDef hspi3;
 
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
+TIM_HandleTypeDef htim3;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
@@ -52,8 +54,10 @@ DMA_HandleTypeDef hdma_usart1_rx;
 
 /* USER CODE BEGIN PV */
 volatile uint32_t gtick = 0;
+
 uint8_t loop_flag = 1;
-uint8_t buffer[50];
+uint8_t buffer[100];
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -65,6 +69,7 @@ static void MX_USART1_UART_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_SPI3_Init(void);
+static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -108,7 +113,9 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM2_Init();
   MX_SPI3_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
+  transpc_index = 0;
   controllerInit(&htim1);
 
   if(as5147_Init(&hspi3, SPI3_CS_GPIO_Port, SPI3_CS_Pin)){
@@ -116,7 +123,6 @@ int main(void)
   }else if(as5147_setZeroPosition()){
 	  loop_flag = 0;
   }
-  start_time = HAL_GetTick();
 
   /* USER CODE END 2 */
 
@@ -124,16 +130,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if(loop_flag){
-		main_loop();
-		sprintf(buffer, "%f\t%f\r\n", motor.rpm, motor.pwm);
-		HAL_UART_Transmit(&huart2, buffer, 50, 1000);
-		loop_time = HAL_GetTick() - gtick;
-		gtick = HAL_GetTick();
-	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	start_time = HAL_GetTick();
+	main_loop();
+	loop_time = HAL_GetTick() - start_time;
   }
   /* USER CODE END 3 */
 }
@@ -335,7 +337,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 170-1;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 99;
+  htim2.Init.Period = 999;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -356,6 +358,51 @@ static void MX_TIM2_Init(void)
   /* USER CODE BEGIN TIM2_Init 2 */
   HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END TIM2_Init 2 */
+
+}
+
+/**
+  * @brief TIM3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM3_Init(void)
+{
+
+  /* USER CODE BEGIN TIM3_Init 0 */
+
+  /* USER CODE END TIM3_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM3_Init 1 */
+
+  /* USER CODE END TIM3_Init 1 */
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 170-1;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 10000-1;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM3_Init 2 */
+  HAL_TIM_Base_Start_IT(&htim3);
+  /* USER CODE END TIM3_Init 2 */
 
 }
 
@@ -498,11 +545,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-//! NOTE:: 0.1ms 주기. @mhlee
-void TimerISR(void){
-	motor.pre_ang = motor.ang;
-	motor.ang = as5147_readPosition();
-}
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huartx){
 	if(huartx->Instance == huart1.Instance){
@@ -513,7 +555,22 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huartx){
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
 	if(htim->Instance == TIM2){
-		TimerISR();
+		getSensor();
+	}
+	if(htim->Instance == TIM3){
+#if 1
+		if(transpc_index==0){
+			get_packet_moter();
+			transpc_index++;
+		}
+		else if(transpc_index ==1){
+			get_packet_rc();
+			transpc_index--;
+		}
+#else
+		sprintf((char*)buffer, "%f\t%f\t%f\t%f\r\n", motor.ang, motor.rpm, motor.pwm, setpoint_value.speed);
+		HAL_UART_Transmit(&huart2, buffer, 100, 1000);
+#endif
 	}
 }
 

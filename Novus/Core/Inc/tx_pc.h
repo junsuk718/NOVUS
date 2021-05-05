@@ -42,6 +42,7 @@ void get_packet_rc();
 void trans_pc(uint8_t len, uint8_t msgid);
 
 
-
 struct TrnasPacket tp;
+uint8_t transpc_index;
+
 #endif /* INC_TX_PC_H_ */

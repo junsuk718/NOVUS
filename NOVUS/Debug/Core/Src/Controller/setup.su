@@ -5,7 +5,7 @@ setup.c:96:7:getStickPercent	24	static
 setup.c:109:7:getStickVector	24	static
 setup.c:120:7:getStickScalar	24	static
 setup.c:138:7:checkMargin	16	static
-setup.c:160:11:setpoint	72	static
+setup.c:160:11:setpoint	80	static
 setup.c:179:7:setSpeed	24	static
 setup.c:194:7:setAmplitude	40	static
 setup.c:214:7:setCyclicShift	40	static

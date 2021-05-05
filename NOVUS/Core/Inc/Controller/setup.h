@@ -54,8 +54,8 @@
   * @defgroup Controller_Setup
   * @brief Minimum & Maximum rang of RPM
   */
-#define RPM_MIN 600
-#define RPM_MAX 7600
+#define RPM_MIN 590
+#define RPM_MAX 7500
 
 /**
   * @}
@@ -102,6 +102,7 @@ typedef struct Moment_controller_gain{
   */
 typedef struct {
     float speed;        /*!< Motor Target Speed(RPM) Set Point */
+    float moment_speed;
 
     float amplitude;    /*!< Target Amplitude of Sin Wave 
                             controll target = speed + amplitude*/

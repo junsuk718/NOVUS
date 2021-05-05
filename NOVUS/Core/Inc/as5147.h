@@ -185,6 +185,8 @@ typedef struct motor_inforamtion{
 */
 MOTOR motor;
 
+volatile uint32_t sens_time;
+volatile uint32_t sens_start;
 /**
   * @}
   */
@@ -219,6 +221,6 @@ uint8_t calcParity(uint16_t data);
 
 
 /* calculate RPM*/
-float calcRPM(float dif);
+float calcRPM(float dif, float loop_time);
 
 #endif /* INC_AS5147_H_ */

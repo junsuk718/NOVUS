@@ -6,4 +6,4 @@ as5147.c:151:10:registerRead	24	static
 as5147.c:175:8:registerWrite	24	static
 as5147.c:203:7:packCommandFrame	24	static
 as5147.c:223:9:calcParity	16	static
-as5147.c:245:7:calcRPM	24	static
+as5147.c:245:7:calcRPM	32	static
