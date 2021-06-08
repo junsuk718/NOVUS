@@ -558,7 +558,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim){
 		getSensor();
 	}
 	if(htim->Instance == TIM3){
-#if 1
+#if 0
 		if(transpc_index==0){
 			get_packet_moter();
 			transpc_index++;

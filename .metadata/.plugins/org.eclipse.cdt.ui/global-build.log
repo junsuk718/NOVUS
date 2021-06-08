@@ -25878,3 +25878,1434 @@ Finished building: Novus.bin
  
 Finished building: Novus.list
  
+07:58:11 **** Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50452	    488	   5720	  56660	   dd54	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+08:12:18 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50452	    488	   5720	  56660	   dd54	Novus.elf
+Finished building: default.size.stdout
+ 
+15:39:46 **** Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/as5147.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/as5147.d" -MT"Core/Src/as5147.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/as5147.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+15:40:52 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+15:45:06 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+15:45:56 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+15:46:23 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+15:47:33 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+15:49:01 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+15:49:59 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+15:51:26 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+15:53:33 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/novus_math.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/novus_math.d" -MT"Core/Src/Controller/novus_math.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/novus_math.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/as5147.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/as5147.d" -MT"Core/Src/as5147.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/as5147.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/tx_pc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/tx_pc.d" -MT"Core/Src/tx_pc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tx_pc.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+15:55:23 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50508	    488	   5720	  56716	   dd8c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+16:00:36 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/Controller/setup.c:78:6: error: conflicting types for 'setAmplitudeGain'
+   78 | void setAmplitudeGain(float gain, float rpm){
+      |      ^~~~~~~~~~~~~~~~
+In file included from ../Core/Src/Controller/setup.c:19:
+../Core/Inc/Controller/setup.h:138:6: note: previous declaration of 'setAmplitudeGain' was here
+  138 | void setAmplitudeGain(float gain);
+      |      ^~~~~~~~~~~~~~~~
+make: *** [Core/Src/Controller/subdir.mk:29: Core/Src/Controller/setup.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+16:00:56 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50564	    488	   5720	  56772	   ddc4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+16:01:25 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50564	    488	   5720	  56772	   ddc4	Novus.elf
+Finished building: default.size.stdout
+ 
+16:02:39 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50564	    488	   5720	  56772	   ddc4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+16:03:28 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50564	    488	   5720	  56772	   ddc4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+16:03:52 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50564	    488	   5720	  56772	   ddc4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+16:11:59 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50500	    488	   5720	  56708	   dd84	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+16:14:10 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50500	    488	   5720	  56708	   dd84	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+16:16:15 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50500	    488	   5720	  56708	   dd84	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+16:18:07 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/novus_math.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/novus_math.d" -MT"Core/Src/Controller/novus_math.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/novus_math.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/as5147.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/as5147.d" -MT"Core/Src/as5147.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/as5147.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/tx_pc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/tx_pc.d" -MT"Core/Src/tx_pc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tx_pc.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50500	    488	   5720	  56708	   dd84	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+16:22:29 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/novus_math.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/novus_math.d" -MT"Core/Src/Controller/novus_math.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/novus_math.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/as5147.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/as5147.d" -MT"Core/Src/as5147.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/as5147.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/tx_pc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/tx_pc.d" -MT"Core/Src/tx_pc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tx_pc.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+18:28:46 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+18:29:20 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+18:30:03 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/novus_math.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/novus_math.d" -MT"Core/Src/Controller/novus_math.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/novus_math.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/as5147.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/as5147.d" -MT"Core/Src/as5147.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/as5147.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/tx_pc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/tx_pc.d" -MT"Core/Src/tx_pc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tx_pc.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50500	    488	   5720	  56708	   dd84	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+18:44:26 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+18:44:46 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5720	  56700	   dd7c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+19:27:09 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/novus_math.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/novus_math.d" -MT"Core/Src/Controller/novus_math.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/novus_math.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/as5147.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/as5147.d" -MT"Core/Src/as5147.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/as5147.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/tx_pc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/tx_pc.d" -MT"Core/Src/tx_pc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tx_pc.o"
+../Core/Src/Controller/controller.c:61:7: error: conflicting types for 'speedController'
+   61 | float speedController(float setpoint, MOTOR motor){
+      |       ^~~~~~~~~~~~~~~
+In file included from ../Core/Src/Controller/controller.c:1:
+../Core/Inc/Controller/controller.h:33:7: note: previous declaration of 'speedController' was here
+   33 | float speedController(SPT_Value setpoint, MOTOR motor);
+      |       ^~~~~~~~~~~~~~~
+../Core/Src/main_loop.c: In function 'main_loop':
+../Core/Src/main_loop.c:8:49: error: incompatible type for argument 1 of 'speedController'
+    8 |   speed_command = speedController(setpoint_value.speed, motor);
+      |                                   ~~~~~~~~~~~~~~^~~~~~
+      |                                                 |
+      |                                                 float
+In file included from ../Core/Inc/main_loop.h:12,
+                 from ../Core/Src/main_loop.c:1:
+../Core/Inc/Controller/controller.h:33:33: note: expected 'SPT_Value' {aka 'struct <anonymous>'} but argument is of type 'float'
+   33 | float speedController(SPT_Value setpoint, MOTOR motor);
+      |                       ~~~~~~~~~~^~~~~~~~
+make: *** [Core/Src/subdir.mk:53: Core/Src/main_loop.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Core/Src/Controller/subdir.mk:25: Core/Src/Controller/controller.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:27:29 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50444	    488	   5720	  56652	   dd4c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+19:30:03 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/novus_math.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/novus_math.d" -MT"Core/Src/Controller/novus_math.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/novus_math.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/as5147.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/as5147.d" -MT"Core/Src/as5147.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/as5147.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/tx_pc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/tx_pc.d" -MT"Core/Src/tx_pc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tx_pc.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50444	    488	   5720	  56652	   dd4c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+19:33:53 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50476	    488	   5720	  56684	   dd6c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+19:35:10 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50476	    488	   5720	  56684	   dd6c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+19:37:42 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50476	    488	   5720	  56684	   dd6c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+19:40:24 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+../Core/Src/Controller/setup.c: In function 'setpoint':
+../Core/Src/Controller/setup.c:165:34: error: invalid type argument of '->' (have 'SPT_Value' {aka 'struct <anonymous>'})
+  165 |  setpoint.moment_speed = setpoint->speed + (sin((motor.ang*(2*PI/360.)) + setpoint.cyclic_shift) * setpoint.amplitude);
+      |                                  ^~
+make: *** [Core/Src/Controller/subdir.mk:29: Core/Src/Controller/setup.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+19:41:05 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+../Core/Src/Controller/setup.c: In function 'setpoint':
+../Core/Src/Controller/setup.c:165:82: warning: 'setpoint.cyclic_shift' is used uninitialized in this function [-Wuninitialized]
+  165 |  setpoint.moment_speed = setpoint.speed + (sin((motor.ang*(2*PI/360.)) + setpoint.cyclic_shift) * setpoint.amplitude);
+      |                                                                          ~~~~~~~~^~~~~~~~~~~~~
+../Core/Src/Controller/setup.c:165:107: warning: 'setpoint.amplitude' is used uninitialized in this function [-Wuninitialized]
+  165 |  setpoint.moment_speed = setpoint.speed + (sin((motor.ang*(2*PI/360.)) + setpoint.cyclic_shift) * setpoint.amplitude);
+      |                                                                                                   ~~~~~~~~^~~~~~~~~~
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50516	    488	   5720	  56724	   dd94	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+19:43:13 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50516	    488	   5720	  56724	   dd94	Novus.elf
+Finished building: default.size.stdout
+ 
+19:43:40 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50516	    488	   5720	  56724	   dd94	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+19:43:55 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50516	    488	   5720	  56724	   dd94	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+19:46:21 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+../Core/Src/Controller/setup.c: In function 'setpoint':
+../Core/Src/Controller/setup.c:165:82: warning: 'setpoint.cyclic_shift' is used uninitialized in this function [-Wuninitialized]
+  165 |  setpoint.moment_speed = setpoint.speed + (sin((motor.ang*(2*PI/360.)) + setpoint.cyclic_shift) * setpoint.amplitude);
+      |                                                                          ~~~~~~~~^~~~~~~~~~~~~
+../Core/Src/Controller/setup.c:165:107: warning: 'setpoint.amplitude' is used uninitialized in this function [-Wuninitialized]
+  165 |  setpoint.moment_speed = setpoint.speed + (sin((motor.ang*(2*PI/360.)) + setpoint.cyclic_shift) * setpoint.amplitude);
+      |                                                                                                   ~~~~~~~~^~~~~~~~~~
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50516	    488	   5720	  56724	   dd94	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+19:47:01 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50516	    488	   5720	  56724	   dd94	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+20:14:49 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50516	    488	   5720	  56724	   dd94	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+20:15:26 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50516	    488	   5720	  56724	   dd94	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+20:16:54 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50516	    488	   5720	  56724	   dd94	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:00:13 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/novus_math.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/novus_math.d" -MT"Core/Src/Controller/novus_math.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/novus_math.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/as5147.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/as5147.d" -MT"Core/Src/as5147.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/as5147.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/tx_pc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/tx_pc.d" -MT"Core/Src/tx_pc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tx_pc.o"
+../Core/Src/Controller/novus_math.c: In function 'LPF':
+../Core/Src/Controller/novus_math.c:26:13: error: invalid type argument of unary '*' (have 'float')
+   26 |  return b0*(*raw_rpm) + b1*(*pre_rpm) - a1*(*pre_lpf);
+      |             ^~~~~~~~
+../Core/Src/Controller/novus_math.c:26:29: error: invalid type argument of unary '*' (have 'float')
+   26 |  return b0*(*raw_rpm) + b1*(*pre_rpm) - a1*(*pre_lpf);
+      |                             ^~~~~~~~
+../Core/Src/Controller/novus_math.c:26:45: error: invalid type argument of unary '*' (have 'float')
+   26 |  return b0*(*raw_rpm) + b1*(*pre_rpm) - a1*(*pre_lpf);
+      |                                             ^~~~~~~~
+../Core/Src/Controller/novus_math.c:27:1: warning: control reaches end of non-void function [-Wreturn-type]
+   27 | }
+      | ^
+make: *** [Core/Src/Controller/subdir.mk:27: Core/Src/Controller/novus_math.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/main_loop.c: In function 'getSensor':
+../Core/Src/main_loop.c:32:23: error: 'MOTOR' {aka 'struct motor_inforamtion'} has no member named 'raw_rpm'
+   32 |  motor.lpf = LPF(motor.raw_rpm, sens_time, motor.pre_rpm, motor.pre_lpf);
+      |                       ^
+make: *** [Core/Src/subdir.mk:53: Core/Src/main_loop.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:00:36 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/novus_math.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/novus_math.d" -MT"Core/Src/Controller/novus_math.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/novus_math.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+../Core/Src/main_loop.c: In function 'getSensor':
+../Core/Src/main_loop.c:32:23: error: 'MOTOR' {aka 'struct motor_inforamtion'} has no member named 'raw_rpm'
+   32 |  motor.lpf = LPF(motor.raw_rpm, sens_time, motor.pre_rpm, motor.pre_lpf);
+      |                       ^
+make: *** [Core/Src/subdir.mk:53: Core/Src/main_loop.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:00:55 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50524	    488	   5728	  56740	   dda4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:02:31 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50524	    488	   5728	  56740	   dda4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:06:03 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50524	    488	   5728	  56740	   dda4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:08:26 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50524	    488	   5728	  56740	   dda4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:11:03 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50524	    488	   5728	  56740	   dda4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:12:43 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50524	    488	   5728	  56740	   dda4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:16:02 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50468	    488	   5728	  56684	   dd6c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:17:53 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5728	  56708	   dd84	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:20:31 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5728	  56708	   dd84	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:21:51 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5728	  56708	   dd84	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:22:04 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5728	  56708	   dd84	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:24:06 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5728	  56708	   dd84	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:26:06 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5728	  56708	   dd84	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:26:59 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5728	  56708	   dd84	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:27:35 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50492	    488	   5728	  56708	   dd84	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:32:24 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50572	    488	   5728	  56788	   ddd4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:33:39 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50596	    488	   5728	  56812	   ddec	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:42:38 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/Controller/setup.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/setup.d" -MT"Core/Src/Controller/setup.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/setup.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+../Core/Src/Controller/controller.c: In function 'outputMotor':
+../Core/Src/Controller/controller.c:116:97: error: request for member 'cyclic_shift' in something not a structure or union
+  116 |             command = motor.pwm + (speed_command / 50) + (sin((motor.ang*(2*PI/360.)) + setpoint.cyclic_shift) * setpoint.amplitude);
+      |                                                                                                 ^
+../Core/Src/Controller/controller.c:116:122: error: request for member 'amplitude' in something not a structure or union
+  116 |             command = motor.pwm + (speed_command / 50) + (sin((motor.ang*(2*PI/360.)) + setpoint.cyclic_shift) * setpoint.amplitude);
+      |                                                                                                                          ^
+make: *** [Core/Src/Controller/subdir.mk:25: Core/Src/Controller/controller.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:42:56 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+../Core/Src/Controller/controller.c: In function 'outputMotor':
+../Core/Src/Controller/controller.c:116:89: error: 'setpoint_value' undeclared (first use in this function)
+  116 |             command = motor.pwm + (speed_command / 50) + (sin((motor.ang*(2*PI/360.)) + setpoint_value.cyclic_shift) * setpoint_value.amplitude);
+      |                                                                                         ^~~~~~~~~~~~~~
+../Core/Src/Controller/controller.c:116:89: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/Controller/subdir.mk:25: Core/Src/Controller/controller.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:44:19 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50532	    488	   5728	  56748	   ddac	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:44:25 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50532	    488	   5728	  56748	   ddac	Novus.elf
+Finished building: default.size.stdout
+ 
+21:46:00 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50508	    488	   5728	  56724	   dd94	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:48:09 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50532	    488	   5728	  56748	   ddac	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:50:13 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+../Core/Src/Controller/controller.c: In function 'outputMotor':
+../Core/Src/Controller/controller.c:116:58: error: expected expression before ';' token
+  116 |             command = motor.pwm + (speed_command / 50) + ;
+      |                                                          ^
+make: *** [Core/Src/Controller/subdir.mk:25: Core/Src/Controller/controller.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+21:50:40 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50540	    488	   5728	  56756	   ddb4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:52:49 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50540	    488	   5728	  56756	   ddb4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:55:03 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50540	    488	   5728	  56756	   ddb4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:58:44 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50620	    488	   5728	  56836	   de04	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+21:59:42 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50620	    488	   5728	  56836	   de04	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+22:01:04 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50620	    488	   5728	  56836	   de04	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+22:05:54 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\novusTest\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50540	    488	   5728	  56756	   ddb4	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+15:17:20 **** Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\NOVUS_master\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50452	    488	   5720	  56660	   dd54	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+15:18:40 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main_loop.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main_loop.d" -MT"Core/Src/main_loop.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main_loop.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\NOVUS_master\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50476	    488	   5720	  56684	   dd6c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 
+15:19:55 **** Incremental Build of configuration Debug for project Novus ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/Controller/controller.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/Controller/controller.d" -MT"Core/Src/Controller/controller.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/Controller/controller.o"
+arm-none-eabi-gcc -o "Novus.elf" @"objects.list"   -mcpu=cortex-m4 -T"F:\School\GraduateProject\git\NOVUS_master\Novus\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Novus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Novus.elf
+ 
+arm-none-eabi-objdump -h -S  Novus.elf  > "Novus.list"
+arm-none-eabi-objcopy  -O binary  Novus.elf  "Novus.bin"
+arm-none-eabi-size   Novus.elf 
+   text	   data	    bss	    dec	    hex	filename
+  50476	    488	   5720	  56684	   dd6c	Novus.elf
+Finished building: default.size.stdout
+ 
+Finished building: Novus.bin
+ 
+Finished building: Novus.list
+ 

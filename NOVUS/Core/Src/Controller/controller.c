@@ -11,7 +11,7 @@ void controllerInit(TIM_HandleTypeDef* htimex){
 #else
 	//setSpeedGain(0.11, 0.0063);
 	//setMomentGain(0.11, 0.0063);
-	setSpeedGain(0.02, 0.0001);
+	setSpeedGain(0.025, 0.0008);
 	setMomentGain(0.03, 0);
 #endif
 	setAmplitudeGain(70);
