@@ -1,0 +1,3 @@
+tx_pc.c:24:6:get_packet_moter	8	static
+tx_pc.c:47:6:get_packet_rc	8	static
+tx_pc.c:64:6:trans_pc	24	static

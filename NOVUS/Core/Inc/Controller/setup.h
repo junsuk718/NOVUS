@@ -25,7 +25,8 @@
 #define __SETUP_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "header.h"
+#include "as5147.h"
+#include "spectrum.h"
 
 /** @addtogroup NOVUS_Controller
   * @{
@@ -36,7 +37,7 @@
   * @defgroup Controller_Setup
   * @brief Convert PD Controller to PID Controller
   */
-/*#define I_CONTROLLER*/    /*!< Using PID Controller or PD Controller */
+//#define I_CONTROLLER    /*!< Using PID Controller or PD Controller */
 
 /**
   * @}
@@ -48,6 +49,13 @@
   * @brief no operate margin when RC controller stick in center position
   */
 #define RC_MARGIN_RANGE 3   /*!< Recommend range 1~5        */
+
+/**
+  * @defgroup Controller_Setup
+  * @brief Minimum & Maximum rang of RPM
+  */
+#define RPM_MIN 590
+#define RPM_MAX 7500
 
 /**
   * @}
@@ -94,6 +102,7 @@ typedef struct Moment_controller_gain{
   */
 typedef struct {
     float speed;        /*!< Motor Target Speed(RPM) Set Point */
+    float moment_speed;
 
     float amplitude;    /*!< Target Amplitude of Sin Wave 
                             controll target = speed + amplitude*/
@@ -110,7 +119,7 @@ typedef struct {
 /**
   * @brief Global Variable to use
   */
-float AMP_GAIN;                             /*!< Amplitude gain will multiply with RC controller's Scalar */
+float amplitude_gain;                             /*!< Amplitude gain will multiply with RC controller's Scalar */
 SPD_GAIN speed_gain;
 MNT_GAIN moment_gain;
 
